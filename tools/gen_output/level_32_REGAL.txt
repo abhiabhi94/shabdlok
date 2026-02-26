@@ -1,0 +1,19 @@
+
+    Level(
+      id: 32,
+      name: 'Regal',
+      letters: ['R', 'E', 'G', 'A', 'L'],
+      targetPlacements: [
+        WordPlacement(word: 'REGAL', startRow: 0, startCol: 0, direction: WordDirection.horizontal, isBonus: true),
+        WordPlacement(word: 'RAGE', startRow: 0, startCol: 0, direction: WordDirection.vertical),
+        WordPlacement(word: 'GEAR', startRow: 0, startCol: 2, direction: WordDirection.vertical),
+        WordPlacement(word: 'LARGE', startRow: 0, startCol: 4, direction: WordDirection.vertical),
+        WordPlacement(word: 'ERA', startRow: 1, startCol: 2, direction: WordDirection.horizontal),
+        WordPlacement(word: 'REG', startRow: 3, startCol: 2, direction: WordDirection.horizontal),
+      ],
+      bonusWords: ['AGE', 'AGER', 'ALE', 'ARE', 'ARGLE', 'EAR', 'EARL', 'EGAL', 'ERG', 'GAE', 'GAL', 'GALE', 'GAR', 'GEL', 'GLARE', 'LAG', 'LAGER', 'LAR', 'LEA', 'LEAR', 'LEG', 'RAG', 'RALE', 'REAL'],
+      gridRows: 5,
+      gridCols: 5,
+      preRevealedCells: [(2, 0), (2, 2), (2, 4)],
+    ),
+

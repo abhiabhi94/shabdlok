@@ -1,0 +1,19 @@
+
+    Level(
+      id: 38,
+      name: 'Ramet',
+      letters: ['R', 'A', 'M', 'E', 'T'],
+      targetPlacements: [
+        WordPlacement(word: 'RAMET', startRow: 0, startCol: 0, direction: WordDirection.horizontal, isBonus: true),
+        WordPlacement(word: 'RATE', startRow: 0, startCol: 0, direction: WordDirection.vertical),
+        WordPlacement(word: 'MART', startRow: 0, startCol: 2, direction: WordDirection.vertical),
+        WordPlacement(word: 'TEAR', startRow: 0, startCol: 4, direction: WordDirection.vertical),
+        WordPlacement(word: 'ARE', startRow: 1, startCol: 2, direction: WordDirection.horizontal),
+        WordPlacement(word: 'TAR', startRow: 3, startCol: 2, direction: WordDirection.horizontal),
+      ],
+      bonusWords: ['ARM', 'ARMET', 'ART', 'ATE', 'EAR', 'EAT', 'ERA', 'ETA', 'MAE', 'MAR', 'MARE', 'MAT', 'MATE', 'MATER', 'MEAT', 'MET', 'META', 'RAM', 'RAT', 'REAM', 'REM', 'RET', 'TAE', 'TAM', 'TAME', 'TAMER', 'TARE', 'TEA', 'TEAM', 'TERM', 'TRAM'],
+      gridRows: 5,
+      gridCols: 5,
+      preRevealedCells: [(2, 0), (2, 2), (2, 4)],
+    ),
+

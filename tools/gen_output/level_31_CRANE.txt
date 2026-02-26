@@ -1,0 +1,19 @@
+
+    Level(
+      id: 31,
+      name: 'Crane',
+      letters: ['C', 'R', 'A', 'N', 'E'],
+      targetPlacements: [
+        WordPlacement(word: 'CRANE', startRow: 0, startCol: 0, direction: WordDirection.horizontal, isBonus: true),
+        WordPlacement(word: 'CARE', startRow: 0, startCol: 0, direction: WordDirection.vertical),
+        WordPlacement(word: 'ACER', startRow: 0, startCol: 2, direction: WordDirection.vertical),
+        WordPlacement(word: 'EARN', startRow: 0, startCol: 4, direction: WordDirection.vertical),
+        WordPlacement(word: 'EAR', startRow: 2, startCol: 2, direction: WordDirection.horizontal),
+        WordPlacement(word: 'RAN', startRow: 3, startCol: 2, direction: WordDirection.horizontal),
+      ],
+      bonusWords: ['ACE', 'ACNE', 'ACRE', 'ANE', 'ARC', 'ARE', 'CAN', 'CANE', 'CANER', 'CAR', 'CARN', 'ERA', 'ERN', 'NACRE', 'NAE', 'NARC', 'NEAR', 'RACE', 'RANCE', 'REC'],
+      gridRows: 5,
+      gridCols: 5,
+      preRevealedCells: [(2, 0), (2, 2), (2, 4)],
+    ),
+

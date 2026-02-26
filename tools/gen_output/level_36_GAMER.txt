@@ -1,0 +1,19 @@
+
+    Level(
+      id: 36,
+      name: 'Gamer',
+      letters: ['G', 'A', 'M', 'E', 'R'],
+      targetPlacements: [
+        WordPlacement(word: 'GAMER', startRow: 0, startCol: 0, direction: WordDirection.horizontal, isBonus: true),
+        WordPlacement(word: 'GAME', startRow: 0, startCol: 0, direction: WordDirection.vertical),
+        WordPlacement(word: 'MEGA', startRow: 0, startCol: 2, direction: WordDirection.vertical),
+        WordPlacement(word: 'RAGE', startRow: 0, startCol: 4, direction: WordDirection.vertical),
+        WordPlacement(word: 'ERA', startRow: 1, startCol: 2, direction: WordDirection.horizontal),
+        WordPlacement(word: 'AGE', startRow: 3, startCol: 2, direction: WordDirection.horizontal),
+      ],
+      bonusWords: ['AGER', 'ARE', 'ARM', 'EAR', 'ERG', 'GAE', 'GAM', 'GAR', 'GEAR', 'GEM', 'GERM', 'GRAM', 'MAE', 'MAG', 'MAGE', 'MAR', 'MARE', 'MARGE', 'RAG', 'RAM', 'REAM', 'REG', 'REGMA', 'REM'],
+      gridRows: 5,
+      gridCols: 5,
+      preRevealedCells: [(2, 0), (2, 2), (2, 4)],
+    ),
+

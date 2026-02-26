@@ -164,6 +164,28 @@ void main() {
             }
           }
         });
+
+        test('no row below row 0 has more than half its columns occupied', () {
+          // Prevents dense horizontal bands where letters fill the entire width.
+          // A row is considered crowded if occupied cells ≥ gridCols (i.e. fully packed).
+          final occupied = <int, Set<int>>{};
+          for (final p in level.targetPlacements) {
+            for (final cell in p.cells) {
+              final row = cell.$1;
+              if (row == 0) continue; // name word row is always full — that's fine
+              occupied.putIfAbsent(row, () => {}).add(cell.$2);
+            }
+          }
+          for (final entry in occupied.entries) {
+            expect(
+              entry.value.length,
+              lessThan(level.gridCols),
+              reason:
+                  'Level ${level.id}: row ${entry.key} has ${entry.value.length} occupied cells '
+                  'out of ${level.gridCols} columns — the entire row is filled, which looks like a solid block of letters',
+            );
+          }
+        });
       });
     }
 

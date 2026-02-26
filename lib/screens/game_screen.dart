@@ -189,7 +189,10 @@ class _GameScreenState extends ConsumerState<GameScreen> {
                     child: Center(
                       child: CrosswordGrid(
                         level: level,
-                        foundWords: state.progress.foundTargetWords,
+                        foundWords: {
+                          ...state.progress.foundTargetWords,
+                          ...state.progress.foundBonusWords,
+                        },
                         hintRevealedCells: state.hintRevealedCells,
                       ),
                     ),

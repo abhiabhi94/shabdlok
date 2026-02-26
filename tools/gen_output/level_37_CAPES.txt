@@ -1,0 +1,19 @@
+
+    Level(
+      id: 37,
+      name: 'Capes',
+      letters: ['C', 'A', 'P', 'E', 'S'],
+      targetPlacements: [
+        WordPlacement(word: 'CAPES', startRow: 0, startCol: 0, direction: WordDirection.horizontal, isBonus: true),
+        WordPlacement(word: 'CAPE', startRow: 0, startCol: 0, direction: WordDirection.vertical),
+        WordPlacement(word: 'PEAS', startRow: 0, startCol: 2, direction: WordDirection.vertical),
+        WordPlacement(word: 'SPEC', startRow: 0, startCol: 4, direction: WordDirection.vertical),
+        WordPlacement(word: 'ACE', startRow: 2, startCol: 2, direction: WordDirection.horizontal),
+        WordPlacement(word: 'SEC', startRow: 3, startCol: 2, direction: WordDirection.horizontal),
+      ],
+      bonusWords: ['ACES', 'APE', 'APES', 'APSE', 'ASP', 'CAP', 'CAPS', 'CASE', 'CEP', 'CEPS', 'PAC', 'PACE', 'PACES', 'PACS', 'PAS', 'PASE', 'PEA', 'PEC', 'PECS', 'PES', 'SAC', 'SAE', 'SAP', 'SCAPE', 'SEA', 'SPA', 'SPACE', 'SPAE'],
+      gridRows: 5,
+      gridCols: 5,
+      preRevealedCells: [(2, 0), (2, 2), (2, 4)],
+    ),
+

@@ -1,0 +1,19 @@
+
+    Level(
+      id: 35,
+      name: 'Caret',
+      letters: ['C', 'A', 'R', 'E', 'T'],
+      targetPlacements: [
+        WordPlacement(word: 'CARET', startRow: 0, startCol: 0, direction: WordDirection.horizontal, isBonus: true),
+        WordPlacement(word: 'CARE', startRow: 0, startCol: 0, direction: WordDirection.vertical),
+        WordPlacement(word: 'RACE', startRow: 0, startCol: 2, direction: WordDirection.vertical),
+        WordPlacement(word: 'TEAR', startRow: 0, startCol: 4, direction: WordDirection.vertical),
+        WordPlacement(word: 'ACE', startRow: 1, startCol: 2, direction: WordDirection.horizontal),
+        WordPlacement(word: 'EAR', startRow: 3, startCol: 2, direction: WordDirection.horizontal),
+      ],
+      bonusWords: ['ACRE', 'ACT', 'ARC', 'ARE', 'ART', 'ATE', 'CAR', 'CART', 'CARTE', 'CAT', 'CATE', 'CATER', 'CRATE', 'EAT', 'ERA', 'ETA', 'RAT', 'RATE', 'REACT', 'REC', 'RECTA', 'RET', 'TACE', 'TAE', 'TAR', 'TARE', 'TEA', 'TRACE'],
+      gridRows: 5,
+      gridCols: 5,
+      preRevealedCells: [(2, 0), (2, 2), (2, 4)],
+    ),
+

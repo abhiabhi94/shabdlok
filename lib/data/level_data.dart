@@ -1460,1356 +1460,207 @@ class LevelData {
     ),
 
     // -------------------------------------------------------------------------
-    // LEVEL 31 — P R E S E N T  (two E's)
+    // LEVEL 31 — S T R E A M
     //
-    // PRESENT (H, row0): P(0,0) R(0,1) E(0,2) S(0,3) E(0,4) N(0,5) T(0,6)
-    // PREEN   (V, col0): P(0,0) R(1,0) E(2,0) E(3,0) N(4,0)
-    // RENTS   (V, col1): R(0,1) E(1,1) N(2,1) T(3,1) S(4,1)
-    // STERN   (V, col3): S(0,3) T(1,3) E(2,3) R(3,3) N(4,3)
-    // ENTERS  (V, col4): E(0,4) N(1,4) T(2,4) E(3,4) R(4,4) S(5,4)
-    // SEEN    (H, row5): S(5,4) E(5,5) E(5,6) N(5,7)
-    //
-    // Intersections:
-    //   PREEN  ∩ PRESENT: (0,0)=P ✓
-    //   RENTS  ∩ PRESENT: (0,1)=R ✓
-    //   STERN  ∩ PRESENT: (0,3)=S ✓
-    //   ENTERS ∩ PRESENT: (0,4)=E ✓
-    //   SEEN   ∩ ENTERS:  (5,4)=S ✓
-    //
-    // col: 0 1 2 3 4 5 6 7
-    // row0: P R E S E N T
-    // row1: R E   T N
-    // row2: E N   E T
-    // row3: E T   R E
-    // row4: N S   N R
-    // row5:       . S E E N
-    // -------------------------------------------------------------------------
-    // -------------------------------------------------------------------------
-    // LEVEL 31 — P R E S E N T
-    //
-    // Letters: P, R, E, S, E, N, T  (E×2)
-    // PRESENT (H, row0): P(0,0) R(0,1) E(0,2) S(0,3) E(0,4) N(0,5) T(0,6)
-    // PEN     (V, col0): P(0,0) E(1,0) N(2,0)
-    // RENT    (V, col1): R(0,1) E(1,1) N(2,1) T(3,1)
-    // SET     (V, col3): S(0,3) E(1,3) T(2,3)
-    // ENTER   (V, col4): E(0,4) N(1,4) T(2,4) E(3,4) R(4,4)   [E×2 ✓]
-    // NEST    (V, col5): N(0,5) E(1,5) S(2,5) T(3,5)
-    // TEN     (V, col6): T(0,6) E(1,6) N(2,6)
-    // REP     (H, row4): R(4,4) E(4,5) P(4,6)   connected via ENTER
-    //
-    // col: 0 1 2 3 4 5 6
-    // row0: P R E S E N T
-    // row1: E E . E N E E
-    // row2: N N . T T S N
-    // row3:   T . . E T .
-    // row4:         R E P
-    // -------------------------------------------------------------------------
-    Level(
-      id: 31,
-      name: 'Present',
-      letters: ['P', 'R', 'E', 'S', 'E', 'N', 'T'],
-      targetPlacements: [
-        WordPlacement(
-          word: 'PRESENT',
-          startRow: 0,
-          startCol: 0,
-          direction: WordDirection.horizontal,
-          isBonus: true,
-        ),
-        WordPlacement(
-          word: 'PEN',
-          startRow: 0,
-          startCol: 0,
-          direction: WordDirection.vertical,
-        ),
-        WordPlacement(
-          word: 'RENT',
-          startRow: 0,
-          startCol: 1,
-          direction: WordDirection.vertical,
-        ),
-        WordPlacement(
-          word: 'SET',
-          startRow: 0,
-          startCol: 3,
-          direction: WordDirection.vertical,
-        ),
-        WordPlacement(
-          word: 'ENTER',
-          startRow: 0,
-          startCol: 4,
-          direction: WordDirection.vertical,
-        ),
-        WordPlacement(
-          word: 'NEST',
-          startRow: 0,
-          startCol: 5,
-          direction: WordDirection.vertical,
-        ),
-        WordPlacement(
-          word: 'TEN',
-          startRow: 0,
-          startCol: 6,
-          direction: WordDirection.vertical,
-        ),
-        WordPlacement(
-          word: 'REP',
-          startRow: 4,
-          startCol: 4,
-          direction: WordDirection.horizontal,
-        ),
-      ],
-      bonusWords: ['ENS', 'ENTERS', 'ERE', 'ERN', 'ERNE', 'ERNES', 'ERNS', 'ERS', 'ERST', 'ESTER', 'NEE', 'NEEP', 'NEEPS', 'NERTS', 'NESTER', 'NET', 'NETS', 'PEE', 'PEEN', 'PEENS', 'PEER', 'PEERS', 'PEES', 'PENES', 'PENS', 'PENSTER', 'PENT', 'PER', 'PERSE', 'PERT', 'PES', 'PEST', 'PESTER', 'PET', 'PETER', 'PETERS', 'PETS', 'PREE', 'PREEN', 'PREENS', 'PREES', 'PRESE', 'PRESET', 'PREST', 'REE', 'REES', 'REEST', 'RENEST', 'RENTE', 'RENTES', 'RENTS', 'REPENT', 'REPENTS', 'REPS', 'RES', 'RESENT', 'RESET', 'REST', 'RET', 'RETE', 'RETS', 'SEE', 'SEEN', 'SEEP', 'SEER', 'SEN', 'SENE', 'SENT', 'SENTE', 'SEPT', 'SER', 'SERE', 'SERPENT', 'SNEER', 'SPEER', 'SPENT', 'SPREE', 'SPRENT', 'STEEP', 'STEER', 'STEP', 'STERE', 'STERN', 'STREP', 'TEE', 'TEEN', 'TEENS', 'TEES', 'TENS', 'TENSE', 'TENSER', 'TERN', 'TERNE', 'TERNES', 'TERNS', 'TERSE', 'TREE', 'TREEN', 'TREENS', 'TREES'],
-      gridRows: 5,
-      gridCols: 7,
-      preRevealedCells: [(0, 2), (2, 5), (4, 5)],
-    ),
-
-    // -------------------------------------------------------------------------
-    // LEVEL 32 — F R A G I L E
-    //
-    // FRAGILE (H, row0): F(0,0) R(0,1) A(0,2) G(0,3) I(0,4) L(0,5) E(0,6)
-    // FLARE   (V, col0): F(0,0) L(1,0) A(2,0) R(3,0) E(4,0)
-    // REGAL   (V, col1): R(0,1) E(1,1) G(2,1) A(3,1) L(4,1)
-    // GRAIL   (V, col3): G(0,3) R(1,3) A(2,3) I(3,3) L(4,3)
-    // LIFER   (V, col5): L(0,5) I(1,5) F(2,5) E(3,5) R(4,5)
-    // GEAR    (H, row2): G(2,1) E(2,2) A(2,3) R(2,4)
-    //
-    // Intersections:
-    //   FLARE ∩ FRAGILE: (0,0)=F ✓
-    //   REGAL ∩ FRAGILE: (0,1)=R ✓
-    //   GRAIL ∩ FRAGILE: (0,3)=G ✓
-    //   LIFER ∩ FRAGILE: (0,5)=L ✓
-    //   GEAR  ∩ REGAL:   (2,1)=G ✓
-    //   GEAR  ∩ GRAIL:   (2,3)=A ✓
-    //
-    // col: 0 1 2 3 4 5 6
-    // row0: F R A G I L E
-    // row1: L E   R   I
-    // row2: A G E A   F
-    // row3: R A   I   E
-    // row4: E L   L   R
-    // -------------------------------------------------------------------------
-    // -------------------------------------------------------------------------
-    // LEVEL 32 — F R A G I L E
-    //
-    // Letters: F, R, A, G, I, L, E  (all unique)
-    // FRAGILE (H, row0): F(0,0) R(0,1) A(0,2) G(0,3) I(0,4) L(0,5) E(0,6)
-    // FIG     (V, col0): F(0,0) I(1,0) G(2,0)
-    // RIG     (V, col1): R(0,1) I(1,1) G(2,1)
-    // AIR     (V, col2): A(0,2) I(1,2) R(2,2)
-    // GRAIL   (V, col3): G(0,3) R(1,3) A(2,3) I(3,3) L(4,3)
-    // IRE     (V, col4): I(0,4) R(1,4) E(2,4)
-    // LIFER   (V, col5): L(0,5) I(1,5) F(2,5) E(3,5) R(4,5)
-    // EARL    (V, col6): E(0,6) A(1,6) R(2,6) L(3,6)
-    // LIRE    (H, row4): L(4,3) I(4,4) R(4,5) E(4,6)   connected via GRAIL+LIFER
-    //
-    // Conflicts: (4,3): GRAIL[4]=L, LIRE[0]=L ✓  (4,5): LIFER[4]=R, LIRE[2]=R ✓
-    //
-    // col: 0 1 2 3 4 5 6
-    // row0: F R A G I L E
-    // row1: I I I R R I A
-    // row2: G G R A E F R
-    // row3:       I   E L
-    // row4:       L I R E
-    // -------------------------------------------------------------------------
-    Level(
-      id: 32,
-      name: 'Fragile',
-      letters: ['F', 'R', 'A', 'G', 'I', 'L', 'E'],
-      targetPlacements: [
-        WordPlacement(
-          word: 'FRAGILE',
-          startRow: 0,
-          startCol: 0,
-          direction: WordDirection.horizontal,
-          isBonus: true,
-        ),
-        WordPlacement(
-          word: 'FIG',
-          startRow: 0,
-          startCol: 0,
-          direction: WordDirection.vertical,
-        ),
-        WordPlacement(
-          word: 'RIG',
-          startRow: 0,
-          startCol: 1,
-          direction: WordDirection.vertical,
-        ),
-        WordPlacement(
-          word: 'AIR',
-          startRow: 0,
-          startCol: 2,
-          direction: WordDirection.vertical,
-        ),
-        WordPlacement(
-          word: 'GRAIL',
-          startRow: 0,
-          startCol: 3,
-          direction: WordDirection.vertical,
-        ),
-        WordPlacement(
-          word: 'IRE',
-          startRow: 0,
-          startCol: 4,
-          direction: WordDirection.vertical,
-        ),
-        WordPlacement(
-          word: 'LIFER',
-          startRow: 0,
-          startCol: 5,
-          direction: WordDirection.vertical,
-        ),
-        WordPlacement(
-          word: 'EARL',
-          startRow: 0,
-          startCol: 6,
-          direction: WordDirection.vertical,
-        ),
-        WordPlacement(
-          word: 'LIRE',
-          startRow: 4,
-          startCol: 3,
-          direction: WordDirection.horizontal,
-        ),
-      ],
-      bonusWords: ['AFIRE', 'AGE', 'AGER', 'AGILE', 'AIL', 'ALE', 'ALEF', 'ALIF', 'ARE', 'ARF', 'ARGIL', 'ARGLE', 'ARIEL', 'ARIL', 'EAR', 'EGAL', 'ELF', 'ERA', 'ERG', 'FAG', 'FAIL', 'FAIR', 'FAR', 'FARE', 'FARL', 'FARLE', 'FEAL', 'FEAR', 'FER', 'FERAL', 'FERIA', 'FERIAL', 'FIAR', 'FIE', 'FIL', 'FILA', 'FILAR', 'FILE', 'FILER', 'FIR', 'FIRE', 'FLAG', 'FLAIR', 'FLARE', 'FLEA', 'FLIER', 'FRAE', 'FRAG', 'FRAIL', 'FRIG', 'GAE', 'GAL', 'GALE', 'GAR', 'GEAR', 'GEL', 'GIE', 'GIRL', 'GLAIR', 'GLAIRE', 'GLARE', 'GLIA', 'GRIEF', 'ILEA', 'LAG', 'LAGER', 'LAIR', 'LAR', 'LARGE', 'LARI', 'LEA', 'LEAF', 'LEAR', 'LEG', 'LEI', 'LIAR', 'LIE', 'LIEF', 'LIER', 'LIFE', 'LIGER', 'LIRA', 'RAG', 'RAGE', 'RAGI', 'RAIL', 'RALE', 'REAL', 'REF', 'REG', 'REGAL', 'REI', 'REIF', 'RIA', 'RIAL', 'RIEL', 'RIF', 'RIFE', 'RIFLE', 'RILE'],
-      gridRows: 5,
-      gridCols: 7,
-      preRevealedCells: [(0, 1), (2, 3), (4, 4)],
-    ),
-
-    // -------------------------------------------------------------------------
-    // LEVEL 33 — C O U R A G E
-    //
-    // COURAGE (H, row0): C(0,0) O(0,1) U(0,2) R(0,3) A(0,4) G(0,5) E(0,6)
-    // CORE    (V, col0): C(0,0) O(1,0) R(2,0) E(3,0)
-    // ROUGE   (V, col2): U(0,2) ... ROUGE=R,O,U,G,E. U at pos3, need R at row-3. Invalid.
-    //   Use GRUEL — no L available. Use OCULAR — no L.
-    //   OGRE (V, col1): O(0,1) G(1,1) R(2,1) E(3,1). OGRE=O,G,R,E ✓. Shares O(0,1) ✓.
-    // ROGUE   (V, col3): R(0,3) O(1,3) G(2,3) U(3,3) E(4,3). ROGUE ✓. Shares R(0,3) ✓.
-    // GRACE   (V, col5): G(0,5) R(1,5) A(2,5) C(3,5) E(4,5). GRACE ✓. Shares G(0,5) ✓.
-    // GORE    (H, row2): G(2,1) ... wait (2,1)=R from OGRE.
-    //   RACE (H, row2): R(2,0) A(2,1)? (2,1)=R from OGRE. Conflict.
-    //   CURE (H, row3): C? (3,0)=E from CORE, (3,1)=E from OGRE. No C at row3.
-    //   EURO (H, row4): E? (4,3)=E from ROGUE ✓. E(4,3)U(4,4)R(4,5)? (4,5)=E from GRACE. EURO[2]=R. Conflict.
-    //   ACRE (H, row3): A? (3,3)=U from ROGUE. Conflict. (3,5)=C from GRACE. ACRE[0]=A. Conflict.
-    //   CAGE (H, row3): C? (3,5)=C from GRACE ✓. C(3,5)A(3,6)G(3,7)... outside 7 cols.
-    //   RACE (H, row2): R(2,5)=A from GRACE. Conflict.
-    //   ORCA (H, row2): O? (2,0)=R from CORE. Conflict. (2,3)=G from ROGUE. Conflict.
-    //   GREW (H) — no W.  GORE (H, row3, col1): G? (3,1)=E from OGRE. Conflict.
-    //   GORE (H, row1): G? (1,1)=G from OGRE ✓. G(1,1)O(1,2)R(1,3)E(1,4). (1,3)=O from ROGUE. GORE[2]=R. Conflict.
-    //   GORSE (H, row1): G(1,1)O(1,2)R(1,3)S(1,4)E(1,5). No S in letters. Conflict.
-    //   ROUE (H, row1): R? (1,0)=O from CORE, (1,3)=O from ROGUE, (1,5)=R from GRACE ✓. R(1,5)O(1,6)U(1,7)... outside.
-    //   RAGE (H, row2): R(2,0) from CORE ✓. R(2,0)A(2,1)G(2,2)E(2,3). (2,1)=R from OGRE. Conflict.
-    //   ACRE (H, row2): A? (2,5)=A from GRACE ✓. A(2,5)C(2,6)R(2,7)... outside.
-    //   RACE (H, row2, col5): R? (2,5)=A. Conflict. 5 words OK for L33.
-    //
-    // Intersections:
-    //   CORE  ∩ COURAGE: (0,0)=C ✓
-    //   OGRE  ∩ COURAGE: (0,1)=O ✓
-    //   ROGUE ∩ COURAGE: (0,3)=R ✓
-    //   GRACE ∩ COURAGE: (0,5)=G ✓
-    //
-    // col: 0 1 2 3 4 5 6
-    // row0: C O U R A G E
-    // row1: O G   O   R
-    // row2: R R   G   A
-    // row3: E E   U   C
-    // row4:       E   E
-    // -------------------------------------------------------------------------
-    // -------------------------------------------------------------------------
-    // LEVEL 33 — C O U R A G E
-    //
-    // Letters: C, O, U, R, A, G, E  (all unique)
-    // COURAGE (H, row0): C(0,0) O(0,1) U(0,2) R(0,3) A(0,4) G(0,5) E(0,6)
-    // COUGAR  (V, col0): C(0,0) O(1,0) U(2,0) G(3,0) A(4,0) R(5,0)
-    // ORC     (V, col1): O(0,1) R(1,1) C(2,1)
-    // UREA    (V, col2): U(0,2) R(1,2) E(2,2) A(3,2)
-    // RACE    (V, col3): R(0,3) A(1,3) C(2,3) E(3,3)
-    // ACE     (V, col4): A(0,4) C(1,4) E(2,4)
-    // GRACE   (V, col5): G(0,5) R(1,5) A(2,5) C(3,5) E(4,5)
-    // EAR     (V, col6): E(0,6) A(1,6) R(2,6)
-    // RUG     (H, row5): R(5,0) U(5,1) G(5,2)   connected via COUGAR
-    //
-    // col: 0 1 2 3 4 5 6
-    // row0: C O U R A G E
-    // row1: O R R A C R A
-    // row2: U C E C E A R
-    // row3: G   A E   C
-    // row4: A       . E
-    // row5: R U G
-    // -------------------------------------------------------------------------
-    Level(
-      id: 33,
-      name: 'Courage',
-      letters: ['C', 'O', 'U', 'R', 'A', 'G', 'E'],
-      targetPlacements: [
-        WordPlacement(
-          word: 'COURAGE',
-          startRow: 0,
-          startCol: 0,
-          direction: WordDirection.horizontal,
-          isBonus: true,
-        ),
-        WordPlacement(
-          word: 'COUGAR',
-          startRow: 0,
-          startCol: 0,
-          direction: WordDirection.vertical,
-        ),
-        WordPlacement(
-          word: 'ORC',
-          startRow: 0,
-          startCol: 1,
-          direction: WordDirection.vertical,
-        ),
-        WordPlacement(
-          word: 'UREA',
-          startRow: 0,
-          startCol: 2,
-          direction: WordDirection.vertical,
-        ),
-        WordPlacement(
-          word: 'RACE',
-          startRow: 0,
-          startCol: 3,
-          direction: WordDirection.vertical,
-        ),
-        WordPlacement(
-          word: 'ACE',
-          startRow: 0,
-          startCol: 4,
-          direction: WordDirection.vertical,
-        ),
-        WordPlacement(
-          word: 'GRACE',
-          startRow: 0,
-          startCol: 5,
-          direction: WordDirection.vertical,
-        ),
-        WordPlacement(
-          word: 'EAR',
-          startRow: 0,
-          startCol: 6,
-          direction: WordDirection.vertical,
-        ),
-        WordPlacement(
-          word: 'RUG',
-          startRow: 5,
-          startCol: 0,
-          direction: WordDirection.horizontal,
-        ),
-      ],
-      bonusWords: ['ACRE', 'AERO', 'AERUGO', 'AGE', 'AGER', 'AGO', 'AGUE', 'ARC', 'ARCO', 'ARE', 'ARGUE', 'AUGER', 'CAGE', 'CAGER', 'CAR', 'CARE', 'CARGO', 'CERO', 'COG', 'COR', 'CORE', 'CRAG', 'CUE', 'CUR', 'CURE', 'EAU', 'ECRU', 'ECU', 'EGO', 'ERA', 'ERG', 'ERGO', 'ERUGO', 'EURO', 'GAE', 'GAR', 'GAUR', 'GEAR', 'GOA', 'GOER', 'GOR', 'GORE', 'GRUE', 'GUACO', 'GUAR', 'OAR', 'OCA', 'OCREA', 'OGRE', 'ORA', 'ORCA', 'ORE', 'OUR', 'RAG', 'RAGE', 'REC', 'REG', 'ROC', 'ROE', 'ROGUE', 'ROUE', 'ROUGE', 'RUE', 'RUGA', 'RUGAE', 'URGE'],
-      gridRows: 6,
-      gridCols: 7,
-      preRevealedCells: [(0, 2), (3, 0), (5, 1)],
-    ),
-
-    // -------------------------------------------------------------------------
-    // LEVEL 34 — M I N E R A L
-    //
-    // MINERAL (H, row0): M(0,0) I(0,1) N(0,2) E(0,3) R(0,4) A(0,5) L(0,6)
-    // MARE    (V, col0): M(0,0) A(1,0) R(2,0) E(3,0)
-    // REIN    (V, col4): R(0,4) E(1,4) I(2,4) N(3,4)
-    // ALIEN   (V, col5): A(0,5) L(1,5) I(2,5) E(3,5) N(4,5)
-    // LINER   (V, col6): L(0,6) I(1,6) N(2,6) E(3,6) R(4,6)
-    // RAIN    (H, row2): R(2,0) A(2,1) I(2,2) N(2,3)
-    // EARN    (H, row3): E(3,0) A(3,1) R(3,2) N(3,3)
-    //
-    // Intersections:
-    //   MARE  ∩ MINERAL: (0,0)=M ✓
-    //   REIN  ∩ MINERAL: (0,4)=R ✓
-    //   ALIEN ∩ MINERAL: (0,5)=A ✓
-    //   LINER ∩ MINERAL: (0,6)=L ✓
-    //   RAIN  ∩ MARE:    (2,0)=R ✓
-    //   EARN  ∩ MARE:    (3,0)=E ✓
-    //
-    // Check (2,4): REIN col4 row2=I. RAIN ends at (2,3). No overlap. ✓
-    // Check (3,4): REIN col4 row3=N. EARN ends at (3,3). No overlap. ✓
-    // Check (3,5): ALIEN col5 row3=E. EARN ends at (3,3). No overlap. ✓
-    //
-    // col: 0 1 2 3 4 5 6
-    // row0: M I N E R A L
-    // row1: A       E L I
-    // row2: R A I N I I N
-    // row3: E A R N N E E
-    // row4:         . N R
-    // -------------------------------------------------------------------------
-    // -------------------------------------------------------------------------
-    // LEVEL 34 — M I N E R A L
-    //
-    // Letters: M, I, N, E, R, A, L  (all unique)
-    // MINERAL (H, row0): M(0,0) I(0,1) N(0,2) E(0,3) R(0,4) A(0,5) L(0,6)
-    // MARINE  (V, col0): M(0,0) A(1,0) R(2,0) I(3,0) N(4,0) E(5,0)
-    // IRE     (V, col1): I(0,1) R(1,1) E(2,1)
-    // NIL     (V, col2): N(0,2) I(1,2) L(2,2)
-    // EARN    (V, col3): E(0,3) A(1,3) R(2,3) N(3,3)
-    // REIN    (V, col4): R(0,4) E(1,4) I(2,4) N(3,4)
-    // ALIEN   (V, col5): A(0,5) L(1,5) I(2,5) E(3,5) N(4,5)
-    // LINER   (V, col6): L(0,6) I(1,6) N(2,6) E(3,6) R(4,6)
-    // EAR     (H, row5): E(5,0) A(5,1) R(5,2)   connected via MARINE
-    //
-    // col: 0 1 2 3 4 5 6
-    // row0: M I N E R A L
-    // row1: A R I A E L I
-    // row2: R E L R I I N
-    // row3: I     N N E E
-    // row4: N         N R
-    // row5: E A R
-    // -------------------------------------------------------------------------
-    Level(
-      id: 34,
-      name: 'Mineral',
-      letters: ['M', 'I', 'N', 'E', 'R', 'A', 'L'],
-      targetPlacements: [
-        WordPlacement(
-          word: 'MINERAL',
-          startRow: 0,
-          startCol: 0,
-          direction: WordDirection.horizontal,
-          isBonus: true,
-        ),
-        WordPlacement(
-          word: 'MARINE',
-          startRow: 0,
-          startCol: 0,
-          direction: WordDirection.vertical,
-        ),
-        WordPlacement(
-          word: 'IRE',
-          startRow: 0,
-          startCol: 1,
-          direction: WordDirection.vertical,
-        ),
-        WordPlacement(
-          word: 'NIL',
-          startRow: 0,
-          startCol: 2,
-          direction: WordDirection.vertical,
-        ),
-        WordPlacement(
-          word: 'EARN',
-          startRow: 0,
-          startCol: 3,
-          direction: WordDirection.vertical,
-        ),
-        WordPlacement(
-          word: 'REIN',
-          startRow: 0,
-          startCol: 4,
-          direction: WordDirection.vertical,
-        ),
-        WordPlacement(
-          word: 'ALIEN',
-          startRow: 0,
-          startCol: 5,
-          direction: WordDirection.vertical,
-        ),
-        WordPlacement(
-          word: 'LINER',
-          startRow: 0,
-          startCol: 6,
-          direction: WordDirection.vertical,
-        ),
-        WordPlacement(
-          word: 'EAR',
-          startRow: 5,
-          startCol: 0,
-          direction: WordDirection.horizontal,
-        ),
-      ],
-      bonusWords: ['AIL', 'AIM', 'AIMER', 'AIN', 'AIR', 'AIRMEN', 'AIRN', 'ALE', 'ALINE', 'ALINER', 'ALME', 'ALMNER', 'AMEN', 'AMI', 'AMIE', 'AMIN', 'AMINE', 'AMIR', 'ANE', 'ANI', 'ANIL', 'ANILE', 'ANIME', 'ARE', 'ARIEL', 'ARIL', 'ARM', 'EARL', 'ELAIN', 'ELAN', 'ELM', 'EMIR', 'ERA', 'ERN', 'ILEA', 'INARM', 'LAIN', 'LAIR', 'LAM', 'LAME', 'LAMER', 'LANE', 'LAR', 'LARI', 'LARINE', 'LEA', 'LEAN', 'LEAR', 'LEARN', 'LEI', 'LEMAN', 'LIANE', 'LIAR', 'LIE', 'LIEN', 'LIER', 'LIMA', 'LIMAN', 'LIME', 'LIMEN', 'LIMN', 'LIMNER', 'LIN', 'LINE', 'LINEAR', 'LIRA', 'LIRE', 'MAE', 'MAIL', 'MAILE', 'MAILER', 'MAIN', 'MAIR', 'MALE', 'MALINE', 'MAN', 'MANE', 'MANLIER', 'MAR', 'MARE', 'MARL', 'MARLIN', 'MARLINE', 'MEAL', 'MEAN', 'MEL', 'MEN', 'MENIAL', 'MERL', 'MERLIN', 'MIEN', 'MIL', 'MILE', 'MILER', 'MINA', 'MINAE', 'MINE', 'MINER', 'MIR', 'MIRE', 'NAE', 'NAIL', 'NAILER', 'NAM', 'NAME', 'NAMER', 'NEAR', 'NEMA', 'NIM', 'RAIL', 'RAIN', 'RALE', 'RAM', 'RAMI', 'RAMIE', 'RAN', 'RANI', 'REAL', 'REALM', 'REAM', 'REI', 'REM', 'REMAIL', 'REMAIN', 'REMAN', 'RENAIL', 'RENAL', 'RIA', 'RIAL', 'RIEL', 'RILE', 'RIM', 'RIME', 'RIN'],
-      gridRows: 6,
-      gridCols: 7,
-      preRevealedCells: [(0, 3), (2, 5), (5, 1)],
-    ),
-
-    // -------------------------------------------------------------------------
-    // LEVEL 35 — M A C H I N E
-    //
-    // MACHINE (H, row0): M(0,0) A(0,1) C(0,2) H(0,3) I(0,4) N(0,5) E(0,6)
-    // MANE    (V, col0): M(0,0) A(1,0) N(2,0) E(3,0)
-    // INCH    (V, col4): I(0,4) N(1,4) C(2,4) H(3,4)
-    // NICHE   (V, col5): N(0,5) I(1,5) C(2,5) H(3,5) E(4,5)
-    // EACH    (V, col6): E(0,6) A(1,6) C(2,6) H(3,6)
-    // ACNE    (H, row1): A(1,0) C(1,1) N(1,2) E(1,3)
-    // NICE    (H, row2): N(2,0) I(2,1) C(2,2) E(2,3)
-    //
-    // Intersections:
-    //   MANE  ∩ MACHINE: (0,0)=M ✓
-    //   INCH  ∩ MACHINE: (0,4)=I ✓
-    //   NICHE ∩ MACHINE: (0,5)=N ✓
-    //   EACH  ∩ MACHINE: (0,6)=E ✓
-    //   ACNE  ∩ MANE:    (1,0)=A ✓
-    //   NICE  ∩ MANE:    (2,0)=N ✓
-    //
-    // Check (1,4): INCH col4 row1=N. ACNE ends at (1,3). No overlap. ✓
-    // Check (2,4): INCH col4 row2=C. NICE ends at (2,3). No overlap. ✓
-    //
-    // col: 0 1 2 3 4 5 6
-    // row0: M A C H I N E
-    // row1: A C N E N I A
-    // row2: N I C E C C C
-    // row3: E       H H H
-    // row4:           E
-    // -------------------------------------------------------------------------
-    // -------------------------------------------------------------------------
-    // LEVEL 35 — M A C H I N E
-    //
-    // Letters: M, A, C, H, I, N, E  (all unique)
-    // MACHINE (H, row0): M(0,0) A(0,1) C(0,2) H(0,3) I(0,4) N(0,5) E(0,6)
-    // MANIC   (V, col0): M(0,0) A(1,0) N(2,0) I(3,0) C(4,0)
-    // ACE     (V, col1): A(0,1) C(1,1) E(2,1)
-    // CAN     (V, col2): C(0,2) A(1,2) N(2,2)
-    // HEM     (V, col3): H(0,3) E(1,3) M(2,3)
-    // ICE     (V, col4): I(0,4) C(1,4) E(2,4)
-    // NICHE   (V, col5): N(0,5) I(1,5) C(2,5) H(3,5) E(4,5)
-    // EACH    (V, col6): E(0,6) A(1,6) C(2,6) H(3,6)
-    // CAME    (H, row4): C(4,0) A(4,1) M(4,2) E(4,3)   connected via MANIC
-    //
-    // Conflict: (4,0): MANIC[4]=C, CAME[0]=C ✓
-    //
-    // col: 0 1 2 3 4 5 6
-    // row0: M A C H I N E
-    // row1: A C A E C I A
-    // row2: N E N M E C C
-    // row3: I       . H H
-    // row4: C A M E . E .
-    // -------------------------------------------------------------------------
-    Level(
-      id: 35,
-      name: 'Machine',
-      letters: ['M', 'A', 'C', 'H', 'I', 'N', 'E'],
-      targetPlacements: [
-        WordPlacement(
-          word: 'MACHINE',
-          startRow: 0,
-          startCol: 0,
-          direction: WordDirection.horizontal,
-          isBonus: true,
-        ),
-        WordPlacement(
-          word: 'MANIC',
-          startRow: 0,
-          startCol: 0,
-          direction: WordDirection.vertical,
-        ),
-        WordPlacement(
-          word: 'ACE',
-          startRow: 0,
-          startCol: 1,
-          direction: WordDirection.vertical,
-        ),
-        WordPlacement(
-          word: 'CAN',
-          startRow: 0,
-          startCol: 2,
-          direction: WordDirection.vertical,
-        ),
-        WordPlacement(
-          word: 'HEM',
-          startRow: 0,
-          startCol: 3,
-          direction: WordDirection.vertical,
-        ),
-        WordPlacement(
-          word: 'ICE',
-          startRow: 0,
-          startCol: 4,
-          direction: WordDirection.vertical,
-        ),
-        WordPlacement(
-          word: 'NICHE',
-          startRow: 0,
-          startCol: 5,
-          direction: WordDirection.vertical,
-        ),
-        WordPlacement(
-          word: 'EACH',
-          startRow: 0,
-          startCol: 6,
-          direction: WordDirection.vertical,
-        ),
-        WordPlacement(
-          word: 'CAME',
-          startRow: 4,
-          startCol: 0,
-          direction: WordDirection.horizontal,
-        ),
-      ],
-      bonusWords: ['ACHE', 'ACME', 'ACNE', 'AHEM', 'AIM', 'AIN', 'AMEN', 'AMI', 'AMICE', 'AMIE', 'AMIN', 'AMINE', 'AMNIC', 'ANE', 'ANEMIC', 'ANI', 'ANIME', 'CAIN', 'CAM', 'CANE', 'CHAIN', 'CHAINE', 'CHAM', 'CHI', 'CHIA', 'CHIME', 'CHIN', 'CHINA', 'CHINE', 'CINE', 'CINEMA', 'EMIC', 'HAE', 'HAEM', 'HAEMIC', 'HAEMIN', 'HAEN', 'HAM', 'HAME', 'HANCE', 'HEMIC', 'HEMIN', 'HEN', 'HIC', 'HIE', 'HIM', 'HIN', 'ICEMAN', 'ICH', 'INCH', 'MAC', 'MACE', 'MACH', 'MACHE', 'MAE', 'MAIN', 'MAN', 'MANCHE', 'MANE', 'MEAN', 'MEN', 'MICA', 'MICE', 'MICHE', 'MIEN', 'MINA', 'MINAE', 'MINCE', 'MINE', 'NAE', 'NAH', 'NAM', 'NAME', 'NEMA', 'NICE', 'NIM'],
-      gridRows: 5,
-      gridCols: 7,
-      preRevealedCells: [(0, 3), (2, 4), (4, 2)],
-    ),
-
-    // -------------------------------------------------------------------------
-    // LEVEL 36 — S T R A N G E
-    //
-    // STRANGE (H, row0): S(0,0) T(0,1) R(0,2) A(0,3) N(0,4) G(0,5) E(0,6)
-    // STERN   (V, col0): S(0,0) T(1,0) E(2,0) R(3,0) N(4,0)
-    // TEARS   (V, col1): T(0,1) E(1,1) A(2,1) R(3,1) S(4,1)
-    // ANGER   (V, col4): N(0,4) ... ANGER=A,N,G,E,R. N at pos2->A at row-2. Invalid.
-    //   RANGE (V, col4): N(0,4)... RANGE=R,A,N,G,E. N at pos3->R at row-3. Invalid.
-    //   ANGEL (V, col5): G(0,5)... ANGEL=A,N,G,E,L. No L in letters. Conflict.
-    //   ANGER (V, col5): G(0,5)... ANGER=A,N,G,E,R. G at pos3->A at row-3. Invalid.
-    //   GRANT (V, col3): A(0,3) G(1,3) R(2,3) A(3,3) N(4,3) T(5,3). Needs 2 A's. Only 1 A. Conflict.
-    //   GREET — no second E. SNARE (V, col3): A(0,3) ... SNARE=S,N,A,R,E. A at pos3->S at row-3. Invalid.
-    //   ANGER starting at col5: G(0,5)R(1,5)... ANGER[0]=A not G. Conflict.
-    //   RANGE starting at col4: N(0,4)... RANGE[0]=R not N. Conflict.
-    //   ANGER starting at col2: R(0,2)... ANGER[0]=A. Conflict.
-    //   CRANE (V, col2): R(0,2) A? CRANE=C,R,A,N,E. No C. Conflict with letters.
-    //   STERN (V, col0) already placed. RENTS (V, col1)—already TEARS.
-    //   GREAT (V, col5): G(0,5)R(1,5)E(2,5)A(3,5)T(4,5). GREAT=G,R,E,A,T ✓. Shares G(0,5) ✓.
-    //   ENTER (V, col6): E(0,6)N(1,6)T(2,6)E(3,6)R(4,6). Needs 2 E's. Letters have 1 E. Conflict.
-    //   SNARE (V, col3): A(0,3)... SNARE[0]=S not A. Conflict.
-    //   GRANT (V, col3): A(0,3) uses 2 A's. Conflict.
-    //   RANT  (V, col3): A(0,3) R? RANT=R,A,N,T. A at pos2->R at row-2. Invalid.
-    //   ANTE  (V, col3): A(0,3) N(1,3) T(2,3) E(3,3). ANTE=A,N,T,E ✓. Shares A(0,3) ✓.
-    //   RATER (V, col4): N(0,4)... RATER[0]=R not N. Conflict.
-    //   NEARS (V, col4): N(0,4) E(1,4) A(2,4) R(3,4) S(4,4). NEARS=N,E,A,R,S ✓. Shares N(0,4) ✓.
-    //   GENRE (V, col6): E(0,6) ... GENRE=G,E,N,R,E. Needs 2 E's. Conflict.
-    //   EGRET (V, col6): E(0,6) G(1,6) R(2,6) E(3,6) T(4,6). Needs 2 E's. Conflict.
-    //   EAGER — 2 E's. EATER — 2 E's.
-    //   STERN: S(0,0)T(1,0)E(2,0)R(3,0)N(4,0). Shares S(0,0) ✓. STERN ✓.
-    //   TEARS: T(0,1)E(1,1)A(2,1)R(3,1)S(4,1). Shares T(0,1) ✓. TEARS ✓.
-    //   ANTE:  A(0,3)N(1,3)T(2,3)E(3,3). Shares A(0,3) ✓.
-    //   NEARS: N(0,4)E(1,4)A(2,4)R(3,4)S(4,4). Shares N(0,4) ✓.
-    //   GREAT: G(0,5)R(1,5)E(2,5)A(3,5)T(4,5). Shares G(0,5) ✓.
-    //   H-connector: RANT (H, row1): R? (1,0)=T from STERN. Conflict.
-    //   NEAR (H, row2): N? (2,0)=E from STERN,(2,1)=A from TEARS,(2,3)=T from ANTE,(2,4)=A from NEARS,(2,5)=E from GREAT.
-    //     NEAR[0]=N. No N at row2 except (2,4)=A. Conflict.
-    //   EARN (H, row3): E? (3,0)=R from STERN,(3,1)=R from TEARS,(3,3)=E from ANTE ✓,(3,4)=R from NEARS,(3,5)=A from GREAT.
-    //     EARN[0]=E. (3,3)=E from ANTE ✓. E(3,3)A(3,4)? (3,4)=R from NEARS. Conflict.
-    //   ERAS (H, row4): E? (4,0)=N from STERN,(4,1)=S from TEARS,(4,4)=S from NEARS,(4,5)=T from GREAT. No E at row4.
-    //   RENT (H, row3): R? (3,0)=R from STERN ✓. R(3,0)E(3,1)? (3,1)=R from TEARS. Conflict.
-    //   RANT (H, row3): R(3,0)A(3,1)? (3,1)=R from TEARS. Conflict.
-    //   STAR (H, row4): S? (4,1)=S from TEARS ✓. S(4,1)T(4,2)A(4,3)R(4,4)? (4,4)=S from NEARS. STAR[3]=R not S. Conflict.
-    //   RATS (H, row4): R? (4,0)=N. Conflict.
-    //   ANTS (H, row2): A? (2,1)=A from TEARS ✓. A(2,1)N(2,2)T(2,3)? (2,3)=T from ANTE ✓ shared! A(2,1)N(2,2)T(2,3)S(2,4)? (2,4)=A from NEARS. ANTS[3]=S not A. Conflict.
-    //   ANTS ends at (2,3). 4 letters: (2,1)(2,2)(2,3)(2,4). (2,3)=T from ANTE ✓ and (2,4)=A from NEARS. ANTS[3]=S. A≠S. Conflict.
-    //   RANT (H, row2, col1): R? (2,1)=A from TEARS. Conflict.
-    //   TANS (H, row2): T? (2,3)=T from ANTE ✓. T(2,3)A(2,4)? (2,4)=A from NEARS ✓ shared. T(2,3)A(2,4)N(2,5)? (2,5)=E from GREAT. TAN[2]=N. E≠N. Conflict.
-    //   SEAT (H, row4): S? (4,1)=S from TEARS ✓. S(4,1)E(4,2)A(4,3)T(4,4)? (4,4)=S from NEARS. SEAT[3]=T. S≠T. Conflict.
-    //   6 words OK for level 36 (STRANGE+STERN+TEARS+ANTE+NEARS+GREAT).
-    //
-    // Intersections:
-    //   STERN ∩ STRANGE: (0,0)=S ✓
-    //   TEARS ∩ STRANGE: (0,1)=T ✓
-    //   ANTE  ∩ STRANGE: (0,3)=A ✓
-    //   NEARS ∩ STRANGE: (0,4)=N ✓
-    //   GREAT ∩ STRANGE: (0,5)=G ✓
-    //
-    // col: 0 1 2 3 4 5 6
-    // row0: S T R A N G E
-    // row1: T E   N E R
-    // row2: E A   T A E
-    // row3: R R   E R A
-    // row4: N S   . S T
-    // -------------------------------------------------------------------------
-    // -------------------------------------------------------------------------
-    // LEVEL 36 — S T R A N G E
-    //
-    // Letters: S, T, R, A, N, G, E  (all unique)
-    // STRANGE (H, row0): S(0,0) T(0,1) R(0,2) A(0,3) N(0,4) G(0,5) E(0,6)
-    // SAGE    (V, col0): S(0,0) A(1,0) G(2,0) E(3,0)
-    // TERN    (V, col1): T(0,1) E(1,1) R(2,1) N(3,1)
-    // RAN     (V, col2): R(0,2) A(1,2) N(2,2)
-    // ANTE    (V, col3): A(0,3) N(1,3) T(2,3) E(3,3)
-    // NEARS   (V, col4): N(0,4) E(1,4) A(2,4) R(3,4) S(4,4)
-    // GARNET  (V, col5): G(0,5) A(1,5) R(2,5) N(3,5) E(4,5) T(5,5)
-    // EAR     (V, col6): E(0,6) A(1,6) R(2,6)
-    // SEA     (H, row4): S(4,4) E(4,5) A(4,6)   connected via NEARS+GARNET
-    //
-    // Conflicts: (4,4): NEARS[4]=S, SEA[0]=S ✓  (4,5): GARNET[4]=E, SEA[1]=E ✓
-    //
-    // col: 0 1 2 3 4 5 6
-    // row0: S T R A N G E
-    // row1: A E A N E A A
-    // row2: G R N T A R R
-    // row3: E N   E R N
-    // row4:         S E A
-    // row5:           T
-    // -------------------------------------------------------------------------
-    Level(
-      id: 36,
-      name: 'Strange',
-      letters: ['S', 'T', 'R', 'A', 'N', 'G', 'E'],
-      targetPlacements: [
-        WordPlacement(
-          word: 'STRANGE',
-          startRow: 0,
-          startCol: 0,
-          direction: WordDirection.horizontal,
-          isBonus: true,
-        ),
-        WordPlacement(
-          word: 'SAGE',
-          startRow: 0,
-          startCol: 0,
-          direction: WordDirection.vertical,
-        ),
-        WordPlacement(
-          word: 'TERN',
-          startRow: 0,
-          startCol: 1,
-          direction: WordDirection.vertical,
-        ),
-        WordPlacement(
-          word: 'RAN',
-          startRow: 0,
-          startCol: 2,
-          direction: WordDirection.vertical,
-        ),
-        WordPlacement(
-          word: 'ANTE',
-          startRow: 0,
-          startCol: 3,
-          direction: WordDirection.vertical,
-        ),
-        WordPlacement(
-          word: 'NEARS',
-          startRow: 0,
-          startCol: 4,
-          direction: WordDirection.vertical,
-        ),
-        WordPlacement(
-          word: 'GARNET',
-          startRow: 0,
-          startCol: 5,
-          direction: WordDirection.vertical,
-        ),
-        WordPlacement(
-          word: 'EAR',
-          startRow: 0,
-          startCol: 6,
-          direction: WordDirection.vertical,
-        ),
-        WordPlacement(
-          word: 'SEA',
-          startRow: 4,
-          startCol: 4,
-          direction: WordDirection.horizontal,
-        ),
-      ],
-      bonusWords: ['AGE', 'AGENT', 'AGENTS', 'AGER', 'AGERS', 'AGES', 'ANE', 'ANES', 'ANGER', 'ANGERS', 'ANGST', 'ANT', 'ANTES', 'ANTRE', 'ANTRES', 'ANTS', 'ARE', 'ARES', 'ARGENT', 'ARGENTS', 'ARS', 'ARSE', 'ART', 'ARTS', 'ASTER', 'ASTERN', 'ATE', 'ATES', 'EARN', 'EARNS', 'EARS', 'EAST', 'EAT', 'EATS', 'ENG', 'ENGS', 'ENS', 'ERA', 'ERAS', 'ERG', 'ERGS', 'ERN', 'ERNS', 'ERS', 'ERST', 'ETA', 'ETAS', 'ETNA', 'ETNAS', 'GAE', 'GAEN', 'GAES', 'GAN', 'GANE', 'GAR', 'GARNETS', 'GARS', 'GAS', 'GAST', 'GASTER', 'GAT', 'GATE', 'GATES', 'GATS', 'GEAR', 'GEARS', 'GEN', 'GENS', 'GENT', 'GENTS', 'GEST', 'GET', 'GETA', 'GETAS', 'GETS', 'GNAR', 'GNARS', 'GNAT', 'GNATS', 'GRAN', 'GRANS', 'GRANT', 'GRANTS', 'GRAT', 'GRATE', 'GRATES', 'GREAT', 'GREATS', 'NAE', 'NAG', 'NAGS', 'NARES', 'NATES', 'NEAR', 'NEAT', 'NEATS', 'NERTS', 'NEST', 'NET', 'NETS', 'RAG', 'RAGE', 'RAGES', 'RAGS', 'RANG', 'RANGE', 'RANGES', 'RANT', 'RANTS', 'RAS', 'RASE', 'RAT', 'RATE', 'RATES', 'RATS', 'REG', 'REGNA', 'REGS', 'RENT', 'RENTS', 'RES', 'REST', 'RET', 'RETAG', 'RETAGS', 'RETS', 'SAE', 'SAG', 'SAGER', 'SANE', 'SANER', 'SANG', 'SANGER', 'SARGE', 'SAT', 'SATE', 'SEAR', 'SEAT', 'SEG', 'SEN', 'SENT', 'SER', 'SERA', 'SET', 'SETA', 'SNAG', 'SNARE', 'STAG', 'STAGE', 'STAGER', 'STANE', 'STANG', 'STAR', 'STARE', 'STERN', 'STERNA', 'STRANG', 'TAE', 'TAG', 'TAGS', 'TAN', 'TANG', 'TANGS', 'TANS', 'TAR', 'TARE', 'TARES', 'TARGE', 'TARGES', 'TARN', 'TARNS', 'TARS', 'TAS', 'TEA', 'TEAR', 'TEARS', 'TEAS', 'TEG', 'TEGS', 'TEN', 'TENS', 'TERGA', 'TERNS', 'TRANS', 'TSAR'],
-      gridRows: 6,
-      gridCols: 7,
-      preRevealedCells: [(0, 2), (3, 5), (5, 5)],
-    ),
-
-    // -------------------------------------------------------------------------
-    // LEVEL 37 — O R G A N I C
-    //
-    // ORGANIC (H, row0): O(0,0) R(0,1) G(0,2) A(0,3) N(0,4) I(0,5) C(0,6)
-    // GROAN   (V, col2): G(0,2) R(1,2) O(2,2) A(3,2) N(4,2). GROAN ✓. Shares G(0,2) ✓.
-    // ARCING  (V, col3): A(0,3) R(1,3) C(2,3) I(3,3) N(4,3) G(5,3). ARCING ✓. Shares A(0,3) ✓.
-    // CARING  (V, col6): C(0,6) A(1,6) R(2,6) I(3,6) N(4,6) G(5,6). CARING ✓. Shares C(0,6) ✓.
-    // RACON   — needs 2nd letter set. Use ROAM — no M.
-    // ACING (H, row2): A? (2,2)=O from GROAN, (2,3)=C from ARCING, (2,6)=R from CARING. No A at row2.
-    // CORN  (H, row2): C? (2,3)=C from ARCING ✓. C(2,3)O(2,4)R(2,5)N(2,6)? (2,6)=R from CARING. CORN[3]=N. R≠N. Conflict.
-    // COIN  (H, row3): C? (3,3)=I from ARCING. Conflict.
-    // ROAN  (H, row3): R? (3,2)=A from GROAN, (3,3)=I from ARCING, (3,6)=I from CARING. No R at row3.
-    // NARC  (H, row4): N? (4,2)=N from GROAN ✓. N(4,2)A(4,3)? (4,3)=N from ARCING. Conflict.
-    // RING  (H, row4): R? (4,2)=N from GROAN, (4,3)=N from ARCING, (4,6)=N from CARING. No R at row4.
-    // ICON  (H, row3): I? (3,3)=I from ARCING ✓. I(3,3)C(3,4)O(3,5)N(3,6). (3,6)=I from CARING. ICON[3]=N. I≠N. Conflict.
-    // ORCA  (H, row1): O? (1,2)=R from GROAN, (1,3)=R from ARCING, (1,6)=A from CARING. No O at row1.
-    //   (1,0) empty, (1,1) empty. Not connected at row1, col0-1.
-    // RAIN  (H, row1, connected via col1 from ORGANIC[1]=R):
-    //   (0,1)=R from ORGANIC. No vertical at col1.
-    //   RAIN (V, col1): R(0,1)A(1,1)I(2,1)N(3,1). RAIN=R,A,I,N ✓. Shares R(0,1) ✓.
-    //   Now with RAIN at col1:
-    //   RAIN (H row not V): use as another vertical.
-    //
-    // Add RAIN (V, col1): R(0,1)A(1,1)I(2,1)N(3,1). Shares R(0,1) ✓.
-    // GRAIN (H, row3): G? (3,2)=A from GROAN, (3,3)=I from ARCING, (3,1)=N from RAIN. No G at row3.
-    // GRAIN (H, row1): G? (1,2)=R from GROAN, (1,3)=R from ARCING, (1,1)=A from RAIN. No G at row1.
-    // NARC  (H, row3): N? (3,1)=N from RAIN ✓. N(3,1)A(3,2)? (3,2)=A from GROAN ✓ shared!
-    //   N(3,1)A(3,2)R(3,3)? (3,3)=I from ARCING. NARC[2]=R. I≠R. Conflict.
-    // NARC at (3,1)-(3,4): N(3,1)A(3,2)R(3,3)C(3,4). (3,3)=I. Conflict.
-    // RAIN (H, row3): R? (3,6)=I from CARING. No R at row3.
-    // ORGAN (H, row1): O? (1,2)=R from GROAN. Conflict. (1,0)(1,1)=empty,A from RAIN. No O.
-    // ACORN (H, row3): A? (3,2)=A from GROAN ✓. A(3,2)C(3,3)? (3,3)=I from ARCING. Conflict.
-    // ROAN (H, row4): R? (4,2)=N from GROAN. Conflict.
-    // OARING (H, row2): O? (2,2)=O from GROAN ✓. O(2,2)A(2,3)? (2,3)=C from ARCING. Conflict.
-    // INCAR — not a word.
-    // GANG — 2 G's.
-    // NAIRU — not a word.
-    // ROARING — 2 R's.
-    // 6 words: ORGANIC + RAIN + GROAN + ARCING + CARING = 5. Need one more.
-    // CROWN — no W. CORGI (V, col0): O(0,0)... CORGI=C,O,R,G,I. O at pos2->C at row-2. Invalid.
-    // MINOR — no M. GORING (V, col5): I(0,5)... GORING=G,O,R,I,N,G. 2 G's needed. Conflict.
-    // IONIC (V, col5): I(0,5)O(1,5)N(2,5)I(3,5)C(4,5). 2 I's needed. Conflict.
-    // GROIN (V, col5): I(0,5)... GROIN=G,R,O,I,N. I at pos4->G at row-4. Invalid.
-    //   Cross I(0,5): GROIN[3]=I->G at row-3. Invalid.
-    // ICON (V, col5): I(0,5)C(1,5)O(2,5)N(3,5). ICON=I,C,O,N ✓. Shares I(0,5) ✓.
-    //   Now ICON at col5: 4 verticals from row0 + RAIN + GROAN.
-    //   Add H-connector: COIN (H, row2): C? (2,2)=O from GROAN, (2,3)=C from ARCING ✓, (2,5)=O from ICON. Conflict.
-    //   CORN (H, row2): C(2,3) from ARCING ✓. C(2,3)O(2,4)R(2,5)? (2,5)=O from ICON. CORN[2]=R. O≠R. Conflict.
-    //   COIN (H, row1): C? (1,2)=R, (1,3)=R, (1,5)=C from ICON ✓. C(1,5)O(1,6)? (1,6)=A from CARING. COIN[1]=O. A≠O. Conflict.
-    //   NOIR (H, row3): N? (3,1)=N from RAIN ✓. N(3,1)O(3,2)? (3,2)=A from GROAN. Conflict.
-    //   IRON (H, row3): I? (3,3)=I from ARCING ✓. I(3,3)R(3,4)O(3,5)N(3,6). (3,6)=I from CARING. IRON[3]=N. I≠N. Conflict.
-    //   7 words if we keep 5+ICON but struggle to connect ICON. ICON at col5 only shares (0,5)=I with ORGANIC. Fine.
-    //
-    // FINAL Level 37: ORGANIC + RAIN + GROAN + ARCING + ICON + CARING = 6 words
-    //
-    // Intersections:
-    //   RAIN   ∩ ORGANIC: (0,1)=R ✓
-    //   GROAN  ∩ ORGANIC: (0,2)=G ✓
-    //   ARCING ∩ ORGANIC: (0,3)=A ✓
-    //   ICON   ∩ ORGANIC: (0,5)=I ✓
-    //   CARING ∩ ORGANIC: (0,6)=C ✓
-    //
-    // col: 0 1 2 3 4 5 6
-    // row0: O R G A N I C
-    // row1: . A R R   C A
-    // row2: . I O C   O R
-    // row3: . N A I   N I
-    // row4:   . N N   . N
-    // row5:     . G   . G
-    // -------------------------------------------------------------------------
-    // -------------------------------------------------------------------------
-    // LEVEL 37 — O R G A N I C
-    //
-    // Letters: O, R, G, A, N, I, C  (all unique)
-    // ORGANIC (H, row0): O(0,0) R(0,1) G(0,2) A(0,3) N(0,4) I(0,5) C(0,6)
-    // ORC     (V, col0): O(0,0) R(1,0) C(2,0)
-    // RIG     (V, col1): R(0,1) I(1,1) G(2,1)
-    // GIN     (V, col2): G(0,2) I(1,2) N(2,2)
-    // ARCING  (V, col3): A(0,3) R(1,3) C(2,3) I(3,3) N(4,3) G(5,3)
-    // NAG     (V, col4): N(0,4) A(1,4) G(2,4)
-    // ICON    (V, col5): I(0,5) C(1,5) O(2,5) N(3,5)
-    // CORGI   (V, col6): C(0,6) O(1,6) R(2,6) G(3,6) I(4,6)
-    // NOR     (H, row4): N(4,3) O(4,4) R(4,5)   connected via ARCING
-    //
-    // Conflict: (4,3): ARCING[4]=N, NOR[0]=N ✓
-    //
-    // col: 0 1 2 3 4 5 6
-    // row0: O R G A N I C
-    // row1: R I I R A C O
-    // row2: C G N C G O R
-    // row3:       I   N G
-    // row4:       N O R I
-    // row5:       G
-    // -------------------------------------------------------------------------
-    Level(
-      id: 37,
-      name: 'Organic',
-      letters: ['O', 'R', 'G', 'A', 'N', 'I', 'C'],
-      targetPlacements: [
-        WordPlacement(
-          word: 'ORGANIC',
-          startRow: 0,
-          startCol: 0,
-          direction: WordDirection.horizontal,
-          isBonus: true,
-        ),
-        WordPlacement(
-          word: 'ORC',
-          startRow: 0,
-          startCol: 0,
-          direction: WordDirection.vertical,
-        ),
-        WordPlacement(
-          word: 'RIG',
-          startRow: 0,
-          startCol: 1,
-          direction: WordDirection.vertical,
-        ),
-        WordPlacement(
-          word: 'GIN',
-          startRow: 0,
-          startCol: 2,
-          direction: WordDirection.vertical,
-        ),
-        WordPlacement(
-          word: 'ARCING',
-          startRow: 0,
-          startCol: 3,
-          direction: WordDirection.vertical,
-        ),
-        WordPlacement(
-          word: 'NAG',
-          startRow: 0,
-          startCol: 4,
-          direction: WordDirection.vertical,
-        ),
-        WordPlacement(
-          word: 'ICON',
-          startRow: 0,
-          startCol: 5,
-          direction: WordDirection.vertical,
-        ),
-        WordPlacement(
-          word: 'CORGI',
-          startRow: 0,
-          startCol: 6,
-          direction: WordDirection.vertical,
-        ),
-        WordPlacement(
-          word: 'NOR',
-          startRow: 4,
-          startCol: 3,
-          direction: WordDirection.horizontal,
-        ),
-      ],
-      bonusWords: ['ACING', 'ACORN', 'AGIN', 'AGIO', 'AGO', 'AGON', 'AGONIC', 'AIN', 'AIR', 'AIRN', 'ANI', 'ARC', 'ARCO', 'ARGON', 'CAIN', 'CAIRN', 'CAN', 'CAR', 'CARGO', 'CARING', 'CARN', 'CIAO', 'CIGAR', 'CION', 'COG', 'COIGN', 'COIN', 'COIR', 'CON', 'CONGA', 'CONI', 'COR', 'CORIA', 'CORING', 'CORN', 'CRAG', 'GAIN', 'GAN', 'GAR', 'GARCON', 'GARNI', 'GIRN', 'GIRO', 'GIRON', 'GNAR', 'GOA', 'GONIA', 'GOR', 'GRAIN', 'GRAN', 'GRIN', 'GROAN', 'GROIN', 'INCOG', 'INRO', 'ION', 'IRON', 'NAOI', 'NARC', 'NARCO', 'NARIC', 'NOG', 'NOIR', 'NORI', 'NORIA', 'OAR', 'OARING', 'OCA', 'ONAGRI', 'ORA', 'ORANG', 'ORCA', 'ORCIN', 'ORGAN', 'ORGIAC', 'ORGIC', 'ORIGAN', 'RACING', 'RACON', 'RAG', 'RAGI', 'RAIN', 'RAN', 'RANG', 'RANI', 'RIA', 'RIN', 'RING', 'ROAN', 'ROC'],
-      gridRows: 6,
-      gridCols: 7,
-      preRevealedCells: [(0, 4), (3, 3), (5, 3)],
-    ),
-
-    // -------------------------------------------------------------------------
-    // LEVEL 38 — V E N T U R E  (two E's)
-    //
-    // VENTURE (H, row0): V(0,0) E(0,1) N(0,2) T(0,3) U(0,4) R(0,5) E(0,6)
-    // VENT    (V, col0): V(0,0) E(1,0) N(2,0) T(3,0). Shares V(0,0) ✓.
-    // ENTER   (V, col1): E(0,1) N(1,1) T(2,1) E(3,1) R(4,1). Needs 2 E's ✓. Shares E(0,1) ✓.
-    // RUNE    (V, col5): R(0,5) U(1,5) N(2,5) E(3,5). Shares R(0,5) ✓.
-    // RETUNE  (V, col6): E(0,6) R(1,6) T(2,6) U(3,6) N(4,6) E(5,6). Needs 2 E's ✓. Shares E(0,6) ✓.
-    // TRUE    (H, row2): T(2,1) R(2,2) U(2,3) E(2,4). (2,1)=T from ENTER ✓. Ends at (2,4). (2,5)=N from RUNE. No conflict. ✓.
-    //
-    // Intersections:
-    //   VENT   ∩ VENTURE: (0,0)=V ✓
-    //   ENTER  ∩ VENTURE: (0,1)=E ✓
-    //   RUNE   ∩ VENTURE: (0,5)=R ✓
-    //   RETUNE ∩ VENTURE: (0,6)=E ✓
-    //   TRUE   ∩ ENTER:   (2,1)=T ✓
-    //
-    // col: 0 1 2 3 4 5 6
-    // row0: V E N T U R E
-    // row1: E N   . . U R
-    // row2: N T R U E N T
-    // row3: T E   . . E U
-    // row4:   R   . . . N
-    // row5:   .   . . . E
-    // -------------------------------------------------------------------------
-    // -------------------------------------------------------------------------
-    // LEVEL 38 — V E N T U R E
-    //
-    // Letters: V, E, N, T, U, R, E  (E×2)
-    // VENTURE (H, row0): V(0,0) E(0,1) N(0,2) T(0,3) U(0,4) R(0,5) E(0,6)
-    // VET     (V, col0): V(0,0) E(1,0) T(2,0)
-    // ENTER   (V, col1): E(0,1) N(1,1) T(2,1) E(3,1) R(4,1)   [E×2 ✓]
-    // NEUTER  (V, col2): N(0,2) E(1,2) U(2,2) T(3,2) E(4,2) R(5,2)   [E×2 ✓]
-    // TERN    (V, col3): T(0,3) E(1,3) R(2,3) N(3,3)
-    // URN     (V, col4): U(0,4) R(1,4) N(2,4)
-    // RUNE    (V, col5): R(0,5) U(1,5) N(2,5) E(3,5)
-    // ERN     (V, col6): E(0,6) R(1,6) N(2,6)
-    // RENT    (H, row4): R(4,1) E(4,2) N(4,3) T(4,4)   connected via ENTER+NEUTER
-    //
-    // Conflicts: (4,1): ENTER[4]=R, RENT[0]=R ✓  (4,2): NEUTER[4]=E, RENT[1]=E ✓
-    //
-    // col: 0 1 2 3 4 5 6
-    // row0: V E N T U R E
-    // row1: E N E E R U R
-    // row2: T T U R N N N
-    // row3:   E T N   E
-    // row4:   R E N T
-    // row5:     R
-    // -------------------------------------------------------------------------
-    Level(
-      id: 38,
-      name: 'Venture',
-      letters: ['V', 'E', 'N', 'T', 'U', 'R', 'E'],
-      targetPlacements: [
-        WordPlacement(
-          word: 'VENTURE',
-          startRow: 0,
-          startCol: 0,
-          direction: WordDirection.horizontal,
-          isBonus: true,
-        ),
-        WordPlacement(
-          word: 'VET',
-          startRow: 0,
-          startCol: 0,
-          direction: WordDirection.vertical,
-        ),
-        WordPlacement(
-          word: 'ENTER',
-          startRow: 0,
-          startCol: 1,
-          direction: WordDirection.vertical,
-        ),
-        WordPlacement(
-          word: 'NEUTER',
-          startRow: 0,
-          startCol: 2,
-          direction: WordDirection.vertical,
-        ),
-        WordPlacement(
-          word: 'TERN',
-          startRow: 0,
-          startCol: 3,
-          direction: WordDirection.vertical,
-        ),
-        WordPlacement(
-          word: 'URN',
-          startRow: 0,
-          startCol: 4,
-          direction: WordDirection.vertical,
-        ),
-        WordPlacement(
-          word: 'RUNE',
-          startRow: 0,
-          startCol: 5,
-          direction: WordDirection.vertical,
-        ),
-        WordPlacement(
-          word: 'ERN',
-          startRow: 0,
-          startCol: 6,
-          direction: WordDirection.vertical,
-        ),
-        WordPlacement(
-          word: 'RENT',
-          startRow: 4,
-          startCol: 1,
-          direction: WordDirection.horizontal,
-        ),
-      ],
-      bonusWords: ['ENURE', 'ERE', 'ERNE', 'EVE', 'EVEN', 'EVENT', 'EVER', 'EVERT', 'NEE', 'NERVE', 'NET', 'NEVE', 'NEVER', 'NUT', 'REE', 'RENTE', 'RET', 'RETE', 'RETUNE', 'REV', 'REVET', 'REVUE', 'RUE', 'RUN', 'RUNT', 'RUT', 'TEE', 'TEEN', 'TEN', 'TENURE', 'TERNE', 'TREE', 'TREEN', 'TRUE', 'TUN', 'TUNE', 'TUNER', 'TUREEN', 'TURN', 'VEE', 'VEER', 'VENT', 'VENTER', 'VENUE', 'VERT', 'VERTU'],
-      gridRows: 6,
-      gridCols: 7,
-      preRevealedCells: [(0, 4), (3, 5), (5, 2)],
-    ),
-
-    // -------------------------------------------------------------------------
-    // LEVEL 39 — E C L I P S E  (two E's)
-    //
-    // ECLIPSE (H, row0): E(0,0) C(0,1) L(0,2) I(0,3) P(0,4) S(0,5) E(0,6)
-    // EPICS   (V, col0): E(0,0) P(1,0) I(2,0) C(3,0) S(4,0). Shares E(0,0) ✓.
-    // SLICE   (V, col1): C(0,1) ... SLICE=S,L,I,C,E. C at pos4->S at row-4. Invalid.
-    //   CEILS: C,E,I,L,S. C(0,1)E(1,1)I(2,1)L(3,1)S(4,1). Obscure. Skip.
-    //   SINCE — no N. SPLICE — needs 2nd letter.
-    //   CLIPS  (V, col1): C(0,1) L(1,1) I(2,1) P(3,1) S(4,1). CLIPS=C,L,I,P,S ✓. Shares C(0,1) ✓.
-    // ICES    (V, col3): I(0,3) C(1,3) E(2,3) S(3,3). ICES ✓. Shares I(0,3) ✓.
-    // PILES   (V, col4): P(0,4) I(1,4) L(2,4) E(3,4) S(4,4). PILES ✓. Shares P(0,4) ✓.
-    // SLEEP   (V, col5): S(0,5) L(1,5) E(2,5) E(3,5) P(4,5). Needs 2 E's ✓. SLEEP ✓. Shares S(0,5) ✓.
-    // LICE    (H, row2): L? (2,1)=I from CLIPS, (2,4)=L from PILES ✓. L(2,4)I(2,5)? (2,5)=E from SLEEP. Conflict.
-    //   PILE (H, row3): P? (3,1)=P from CLIPS ✓. P(3,1)I(3,2)L(3,3)? (3,3)=S from ICES. Conflict.
-    //   SLIP (H, row4): S? (4,0)=S from EPICS ✓. S(4,0)L(4,1)? (4,1)=S from CLIPS. Conflict.
-    //   CLIP (H, row3): C? (3,0)=C from EPICS ✓. C(3,0)L(3,1)? (3,1)=P from CLIPS. Conflict.
-    //   ISLE (H, row4): I? (4,0)=S from EPICS. Conflict.
-    //   PICE (H, row1): P? (1,0)=P from EPICS ✓. P(1,0)I(1,1)? (1,1)=L from CLIPS. Conflict.
-    //   SPICE (H, row1): S? (1,0)=P. Conflict.
-    //   PILE (H, row1): P? (1,0)=P from EPICS ✓. P(1,0)I(1,1)? (1,1)=L from CLIPS. Conflict.
-    //   PEEL (H, row3): P? (3,4)=E from PILES. Conflict. No P at row3 except (3,1)=P from CLIPS.
-    //     P(3,1) E(3,2) E(3,3) L(3,4)? (3,3)=S from ICES. Conflict.
-    //   LIPE — not a word. CLIP already placed.
-    //   EPIC (H, row2): E? (2,3)=E from ICES ✓. E(2,3)... but EPIC starts with E at col3.
-    //     E(2,3)P(2,4)? (2,4)=L from PILES. Conflict.
-    //   ICES (H, row2): already vertical. Use different H.
-    //   LIPS (H, row4): L? (4,1)=S from CLIPS. Conflict. (4,4)=S from PILES. Conflict. (4,5)=P from SLEEP. Conflict. No L at row4.
-    //   SPIEL is fairly common (a speech/pitch). SPIEL (V, col5): S already used SLEEP. Can't use both at col5.
-    //   Use SPEED (V, col5) instead: S(0,5)P(1,5)E(2,5)E(3,5)D(4,5). No D in letters. Conflict.
-    //   Keep SLEEP at col5. No H-connectors available. 6 words OK.
-    //
-    // FINAL Level 39: ECLIPSE + EPICS + CLIPS + ICES + PILES + SLEEP = 6 words
-    //
-    // Intersections:
-    //   EPICS ∩ ECLIPSE: (0,0)=E ✓
-    //   CLIPS ∩ ECLIPSE: (0,1)=C ✓
-    //   ICES  ∩ ECLIPSE: (0,3)=I ✓
-    //   PILES ∩ ECLIPSE: (0,4)=P ✓
-    //   SLEEP ∩ ECLIPSE: (0,5)=S ✓
-    //
-    // col: 0 1 2 3 4 5 6
-    // row0: E C L I P S E
-    // row1: P L   C I L
-    // row2: I I   E L E
-    // row3: C P   S E E
-    // row4: S S     S P
-    // -------------------------------------------------------------------------
-    // -------------------------------------------------------------------------
-    // LEVEL 39 — E C L I P S E
-    //
-    // Letters: E, C, L, I, P, S, E  (E×2)
-    // ECLIPSE (H, row0): E(0,0) C(0,1) L(0,2) I(0,3) P(0,4) S(0,5) E(0,6)
-    // EEL     (V, col0): E(0,0) E(1,0) L(2,0)   [E×2 ✓]
-    // CEE     (V, col1): C(0,1) E(1,1) E(2,1)   [E×2 ✓]  (CEE = the letter C)
-    // LIP     (V, col2): L(0,2) I(1,2) P(2,2)
-    // ICE     (V, col3): I(0,3) C(1,3) E(2,3)
-    // PIE     (V, col4): P(0,4) I(1,4) E(2,4)
-    // SPLICE  (V, col5): S(0,5) P(1,5) L(2,5) I(3,5) C(4,5) E(5,5)
-    // EPICS   (V, col6): E(0,6) P(1,6) I(2,6) C(3,6) S(4,6)
-    // PEEL    (H, row2): P(2,2) E(2,3) E(2,4) L(2,5)   [E×2 ✓, connected via LIP+ICE+PIE+SPLICE]
-    //
-    // Conflicts: (2,2): LIP[2]=P, PEEL[0]=P ✓  (2,3): ICE[2]=E, PEEL[1]=E ✓
-    //            (2,4): PIE[2]=E, PEEL[2]=E ✓  (2,5): SPLICE[2]=L, PEEL[3]=L ✓
-    //
-    // col: 0 1 2 3 4 5 6
-    // row0: E C L I P S E
-    // row1: E E I C I P P
-    // row2: L E P E E L I
-    // row3:         . I C
-    // row4:         . C S
-    // row5:         . E
-    // -------------------------------------------------------------------------
-    Level(
-      id: 39,
-      name: 'Eclipse',
-      letters: ['E', 'C', 'L', 'I', 'P', 'S', 'E'],
-      targetPlacements: [
-        WordPlacement(
-          word: 'ECLIPSE',
-          startRow: 0,
-          startCol: 0,
-          direction: WordDirection.horizontal,
-          isBonus: true,
-        ),
-        WordPlacement(
-          word: 'EEL',
-          startRow: 0,
-          startCol: 0,
-          direction: WordDirection.vertical,
-        ),
-        WordPlacement(
-          word: 'CEE',
-          startRow: 0,
-          startCol: 1,
-          direction: WordDirection.vertical,
-        ),
-        WordPlacement(
-          word: 'LIP',
-          startRow: 0,
-          startCol: 2,
-          direction: WordDirection.vertical,
-        ),
-        WordPlacement(
-          word: 'ICE',
-          startRow: 0,
-          startCol: 3,
-          direction: WordDirection.vertical,
-        ),
-        WordPlacement(
-          word: 'PIE',
-          startRow: 0,
-          startCol: 4,
-          direction: WordDirection.vertical,
-        ),
-        WordPlacement(
-          word: 'SPLICE',
-          startRow: 0,
-          startCol: 5,
-          direction: WordDirection.vertical,
-        ),
-        WordPlacement(
-          word: 'EPICS',
-          startRow: 0,
-          startCol: 6,
-          direction: WordDirection.vertical,
-        ),
-        WordPlacement(
-          word: 'PEEL',
-          startRow: 2,
-          startCol: 2,
-          direction: WordDirection.horizontal,
-        ),
-      ],
-      bonusWords: ['CEES', 'CEIL', 'CEILS', 'CEL', 'CELS', 'CEP', 'CEPE', 'CEPES', 'CEPS', 'CIS', 'CLEPE', 'CLEPES', 'CLIP', 'CLIPS', 'EELS', 'ELS', 'ELSE', 'EPIC', 'ICES', 'ISLE', 'LEE', 'LEES', 'LEI', 'LEIS', 'LICE', 'LIE', 'LIES', 'LIPS', 'LIS', 'LISP', 'PEC', 'PECS', 'PEE', 'PEELS', 'PEES', 'PEISE', 'PELE', 'PELES', 'PES', 'PIC', 'PICE', 'PICS', 'PIECE', 'PIECES', 'PIES', 'PILE', 'PILES', 'PIS', 'PLIE', 'PLIES', 'PSI', 'SEC', 'SEE', 'SEEL', 'SEEP', 'SEI', 'SEL', 'SEPIC', 'SIC', 'SICE', 'SIP', 'SIPE', 'SLEEP', 'SLICE', 'SLIP', 'SLIPE', 'SPEC', 'SPECIE', 'SPEEL', 'SPEIL', 'SPIC', 'SPICE', 'SPIEL', 'SPILE'],
-      gridRows: 6,
-      gridCols: 7,
-      preRevealedCells: [(0, 2), (2, 3), (4, 5)],
-    ),
-
-    // -------------------------------------------------------------------------
-    // LEVEL 40 — P I N N A C L E  (two N's)
-    //
-    // PINNACLE (H, row0): P(0,0) I(0,1) N(0,2) N(0,3) A(0,4) C(0,5) L(0,6) E(0,7)
-    // PANIC    (V, col0): P(0,0) A(1,0) N(2,0) I(3,0) C(4,0). Shares P(0,0) ✓.
-    // INANE    (V, col1): I(0,1) N(1,1) A(2,1) N(3,1) E(4,1). Needs 2 N's ✓. Shares I(0,1) ✓.
-    // CLEAN    (V, col5): C(0,5) L(1,5) E(2,5) A(3,5) N(4,5). Shares C(0,5) ✓.
-    // LINEN    (V, col6): L(0,6) I(1,6) N(2,6) E(3,6) N(4,6). Needs 2 N's ✓. Shares L(0,6) ✓.
-    // ALINE    (H, row2): A(2,1) L(2,2) I(2,3) N(2,4) E(2,5)
-    //   (2,1)=A from INANE ✓  (2,5)=E from CLEAN ✓
-    // NICE     (H, row3): N(3,1) I(3,2) C(3,3) E(3,4)
-    //   (3,1)=N from INANE ✓. (3,2)(3,3)(3,4) empty. ✓.
-    //
-    // Intersections:
-    //   PANIC ∩ PINNACLE: (0,0)=P ✓
-    //   INANE ∩ PINNACLE: (0,1)=I ✓
-    //   CLEAN ∩ PINNACLE: (0,5)=C ✓
-    //   LINEN ∩ PINNACLE: (0,6)=L ✓
-    //   ALINE ∩ INANE:    (2,1)=A ✓
-    //   ALINE ∩ CLEAN:    (2,5)=E ✓
-    //   NICE  ∩ INANE:    (3,1)=N ✓
-    //
-    // col: 0 1 2 3 4 5 6 7
-    // row0: P I N N A C L E
-    // row1: A N       L I
-    // row2: N A L I N E N
-    // row3: I N I C E . E
-    // row4: C E     . N N
-    // -------------------------------------------------------------------------
-    // -------------------------------------------------------------------------
-    // LEVEL 40 — P I N N A C L E
-    //
-    // Letters: P, I, N, N, A, C, L, E  (N×2)
-    // PINNACLE (H, row0): P(0,0) I(0,1) N(0,2) N(0,3) A(0,4) C(0,5) L(0,6) E(0,7)
-    // PAL      (V, col0): P(0,0) A(1,0) L(2,0)
-    // INN      (V, col1): I(0,1) N(1,1) N(2,1)   [N×2 ✓]
-    // NIL      (V, col2): N(0,2) I(1,2) L(2,2)
-    // NIP      (V, col3): N(0,3) I(1,3) P(2,3)
-    // ALIEN    (V, col4): A(0,4) L(1,4) I(2,4) E(3,4) N(4,4)
-    // CANINE   (V, col5): C(0,5) A(1,5) N(2,5) I(3,5) N(4,5) E(5,5)   [N×2 ✓]
-    // LANCE    (V, col6): L(0,6) A(1,6) N(2,6) C(3,6) E(4,6)
-    // EPIC     (V, col7): E(0,7) P(1,7) I(2,7) C(3,7)
-    // PIN      (H, row2): P(2,3) I(2,4) N(2,5)   connected via NIP+ALIEN+CANINE
-    //
-    // Conflicts: (2,3): NIP[2]=P, PIN[0]=P ✓  (2,4): ALIEN[2]=I, PIN[1]=I ✓
-    //            (2,5): CANINE[2]=N, PIN[2]=N ✓
-    //
-    // col: 0 1 2 3 4 5 6 7
-    // row0: P I N N A C L E
-    // row1: A N I I L A A P
-    // row2: L N L P I N N I
-    // row3:         E I C C
-    // row4:         N N E
-    // row5:           E
-    // -------------------------------------------------------------------------
-    Level(
-      id: 40,
-      name: 'Pinnacle',
-      letters: ['P', 'I', 'N', 'N', 'A', 'C', 'L', 'E'],
-      targetPlacements: [
-        WordPlacement(
-          word: 'PINNACLE',
-          startRow: 0,
-          startCol: 0,
-          direction: WordDirection.horizontal,
-          isBonus: true,
-        ),
-        WordPlacement(
-          word: 'PAL',
-          startRow: 0,
-          startCol: 0,
-          direction: WordDirection.vertical,
-        ),
-        WordPlacement(
-          word: 'INN',
-          startRow: 0,
-          startCol: 1,
-          direction: WordDirection.vertical,
-        ),
-        WordPlacement(
-          word: 'NIL',
-          startRow: 0,
-          startCol: 2,
-          direction: WordDirection.vertical,
-        ),
-        WordPlacement(
-          word: 'NIP',
-          startRow: 0,
-          startCol: 3,
-          direction: WordDirection.vertical,
-        ),
-        WordPlacement(
-          word: 'ALIEN',
-          startRow: 0,
-          startCol: 4,
-          direction: WordDirection.vertical,
-        ),
-        WordPlacement(
-          word: 'CANINE',
-          startRow: 0,
-          startCol: 5,
-          direction: WordDirection.vertical,
-        ),
-        WordPlacement(
-          word: 'LANCE',
-          startRow: 0,
-          startCol: 6,
-          direction: WordDirection.vertical,
-        ),
-        WordPlacement(
-          word: 'EPIC',
-          startRow: 0,
-          startCol: 7,
-          direction: WordDirection.vertical,
-        ),
-        WordPlacement(
-          word: 'PIN',
-          startRow: 2,
-          startCol: 3,
-          direction: WordDirection.horizontal,
-        ),
-      ],
-      bonusWords: ['ACE', 'ACNE', 'AIL', 'AIN', 'ALE', 'ALEC', 'ALINE', 'ALP', 'ALPINE', 'ANE', 'ANI', 'ANIL', 'ANILE', 'APE', 'APNEIC', 'CAIN', 'CAN', 'CANE', 'CANNEL', 'CANNIE', 'CAP', 'CAPE', 'CAPELIN', 'CAPLIN', 'CEIL', 'CEL', 'CEP', 'CINE', 'CLAN', 'CLAP', 'CLEAN', 'CLINE', 'CLIP', 'ELAIN', 'ELAN', 'ENCINA', 'ENCINAL', 'EPICAL', 'ICE', 'ILEA', 'ILEAC', 'INANE', 'INLACE', 'LAC', 'LACE', 'LAIC', 'LAIN', 'LANE', 'LAP', 'LAPIN', 'LEA', 'LEAN', 'LEAP', 'LEI', 'LIANE', 'LICE', 'LIE', 'LIEN', 'LIN', 'LINAC', 'LINE', 'LINEN', 'LINN', 'LIP', 'NAE', 'NAIL', 'NAN', 'NANCE', 'NAP', 'NAPE', 'NEAP', 'NICE', 'NINE', 'NIPA', 'PAC', 'PACE', 'PAIL', 'PAIN', 'PALE', 'PAN', 'PANE', 'PANEL', 'PANIC', 'PANICLE', 'PANNE', 'PEA', 'PEAL', 'PEAN', 'PEC', 'PECAN', 'PEIN', 'PELICAN', 'PEN', 'PENAL', 'PENCIL', 'PENIAL', 'PENNA', 'PENNI', 'PENNIA', 'PIA', 'PIAL', 'PIAN', 'PIC', 'PICA', 'PICAL', 'PICE', 'PIE', 'PILE', 'PILEA', 'PINA', 'PINE', 'PINEAL', 'PINNA', 'PINNACE', 'PINNAE', 'PINNAL', 'PLACE', 'PLAICE', 'PLAIN', 'PLAN', 'PLANE', 'PLEA', 'PLENA', 'PLICA', 'PLICAE', 'PLIE'],
-      gridRows: 6,
-      gridCols: 8,
-      preRevealedCells: [(0, 3), (2, 4), (5, 5)],
-    ),
-
-    // -------------------------------------------------------------------------
-    // LEVEL 41 — S P R I N G
-    //
-    // Letters: S, P, R, I, N, G
-    // SPRING (H, row0): S(0,0) P(0,1) R(0,2) I(0,3) N(0,4) G(0,5)
-    // SPRIG  (V, col0): S(0,0) P(1,0) R(2,0) I(3,0) G(4,0)  shares S(0,0) ✓
-    // PRIGS  (V, col1): P(0,1) R(1,1) I(2,1) G(3,1) S(4,1)  shares P(0,1) ✓
-    // RING   (V, col2): R(0,2) I(1,2) N(2,2) G(3,2)          shares R(0,2) ✓
-    // NIPS   (V, col4): N(0,4) I(1,4) P(2,4) S(3,4)          shares N(0,4) ✓
-    // GRINS  (V, col5): G(0,5) R(1,5) I(2,5) N(3,5) S(4,5)  shares G(0,5) ✓
+    // Letters: S, T, R, E, A, M
+    // STREAM (H, row0): S(0,0) T(0,1) R(0,2) E(0,3) A(0,4) M(0,5)
+    // STEAM  (V, col0): S(0,0) T(1,0) E(2,0) A(3,0) M(4,0)
+    // REAM   (V, col2): R(0,2) E(1,2) A(2,2) M(3,2)
+    // MARE   (V, col5): M(0,5) A(1,5) R(2,5) E(3,5)
+    // TAE    (H, row1): T(1,0) A(1,1) E(1,2)   T from STEAM, E from REAM
+    // EAT    (H, row1): E(1,2) A(1,3) T(1,4)   E from REAM/TAE
+    // ATE    (H, row2): A(2,2) T(2,3) E(2,4)   A from REAM
+    // ARM    (H, row3): A(3,0) R(3,1) M(3,2)   A from STEAM, M from REAM
+    // MAR    (H, row3): M(3,2) A(3,3) R(3,4)   M from REAM/ARM
+    // MET    (H, row4): M(4,0) E(4,1) T(4,2)   M from STEAM
     //
     // col: 0 1 2 3 4 5
-    // row0: S P R I N G
-    // row1: P R I   I R
-    // row2: R I N   P I
-    // row3: I G G   S N
-    // row4: G S         S
-    // -------------------------------------------------------------------------
+    // row0: S T R E A M
+    // row1: T A E A T A
+    // row2: E . A T E R
+    // row3: A R M A R E
+    // row4: M E T . . .
+    Level(
+      id: 31,
+      name: 'Stream',
+      letters: ['S', 'T', 'R', 'E', 'A', 'M'],
+      targetPlacements: [
+        WordPlacement(word: 'STREAM', startRow: 0, startCol: 0, direction: WordDirection.horizontal, isBonus: true),
+        WordPlacement(word: 'SMART', startRow: 0, startCol: 0, direction: WordDirection.vertical),
+        WordPlacement(word: 'RATES', startRow: 0, startCol: 2, direction: WordDirection.vertical),
+        WordPlacement(word: 'ARMS', startRow: 0, startCol: 4, direction: WordDirection.vertical),
+      ],
+      bonusWords: ['ARE', 'ARES', 'ARM', 'ARMET', 'ARMETS', 'ARS', 'ARSE', 'ART', 'ARTS', 'ASTER', 'ATE', 'ATES', 'EAR', 'EARS', 'EAST', 'EAT', 'EATS', 'EMS', 'ERA', 'ERAS', 'ERS', 'ERST', 'ETA', 'ETAS', 'MAE', 'MAES', 'MAR', 'MARE', 'MARES', 'MARS', 'MARSE', 'MART', 'MARTS', 'MAS', 'MASER', 'MAST', 'MASTER', 'MAT', 'MATE', 'MATER', 'MATERS', 'MATES', 'MATRES', 'MATS', 'MEAT', 'MEATS', 'MESA', 'MET', 'META', 'RAM', 'RAMET', 'RAMETS', 'RAMS', 'RAS', 'RASE', 'RAT', 'RATE', 'RATS', 'REAM', 'REAMS', 'REM', 'REMS', 'RES', 'REST', 'RET', 'RETS', 'SAE', 'SAME', 'SAT', 'SATE', 'SATEM', 'SEA', 'SEAM', 'SEAR', 'SEAT', 'SER', 'SERA', 'SET', 'SETA', 'SMEAR', 'STAR', 'STARE', 'STEAM', 'STEM', 'TAE', 'TAM', 'TAME', 'TAMER', 'TAMERS', 'TAMES', 'TAMS', 'TAR', 'TARE', 'TARES', 'TARS', 'TAS', 'TEA', 'TEAM', 'TEAMS', 'TEAR', 'TEARS', 'TEAS', 'TERM', 'TERMS', 'TRAM', 'TRAMS', 'TSAR'],
+      gridRows: 5,
+      gridCols: 6,
+      preRevealedCells: [(2, 0), (2, 2), (2, 4)],
+    ),
+    Level(
+      id: 32,
+      name: 'Rental',
+      letters: ['R', 'E', 'N', 'T', 'A', 'L'],
+      targetPlacements: [
+        WordPlacement(word: 'RENTAL', startRow: 0, startCol: 0, direction: WordDirection.horizontal, isBonus: true),
+        WordPlacement(word: 'RATE', startRow: 0, startCol: 0, direction: WordDirection.vertical),
+        WordPlacement(word: 'NEAR', startRow: 0, startCol: 2, direction: WordDirection.vertical),
+        WordPlacement(word: 'ALERT', startRow: 0, startCol: 4, direction: WordDirection.vertical),
+        WordPlacement(word: 'ARE', startRow: 2, startCol: 2, direction: WordDirection.horizontal),
+      ],
+      bonusWords: ['ALE', 'ALT', 'ALTER', 'ANE', 'ANT', 'ANTE', 'ANTLER', 'ANTRE', 'ART', 'ARTEL', 'ATE', 'EAR', 'EARL', 'EARN', 'EAT', 'ELAN', 'ERA', 'ERN', 'ETA', 'ETNA', 'LANE', 'LAR', 'LAT', 'LATE', 'LATEN', 'LATER', 'LEA', 'LEAN', 'LEANT', 'LEAR', 'LEARN', 'LEARNT', 'LENT', 'LET', 'NAE', 'NEAT', 'NET', 'RALE', 'RAN', 'RANT', 'RAT', 'RATEL', 'REAL', 'RENAL', 'RENT', 'RET', 'TAE', 'TAEL', 'TALE', 'TALER', 'TAN', 'TAR', 'TARE', 'TARN', 'TEA', 'TEAL', 'TEAR', 'TEL', 'TELA', 'TEN', 'TERN'],
+      gridRows: 5,
+      gridCols: 6,
+      preRevealedCells: [(2, 0), (2, 2), (2, 4)],
+    ),
+    Level(
+      id: 33,
+      name: 'Garnet',
+      letters: ['G', 'A', 'R', 'N', 'E', 'T'],
+      targetPlacements: [
+        WordPlacement(word: 'GARNET', startRow: 0, startCol: 0, direction: WordDirection.horizontal, isBonus: true),
+        WordPlacement(word: 'GRANT', startRow: 0, startCol: 0, direction: WordDirection.vertical),
+        WordPlacement(word: 'RENT', startRow: 0, startCol: 2, direction: WordDirection.vertical),
+        WordPlacement(word: 'EARN', startRow: 0, startCol: 4, direction: WordDirection.vertical),
+        WordPlacement(word: 'ERA', startRow: 1, startCol: 2, direction: WordDirection.horizontal),
+        WordPlacement(word: 'TAN', startRow: 3, startCol: 2, direction: WordDirection.horizontal),
+      ],
+      bonusWords: ['AGE', 'AGENT', 'AGER', 'ANE', 'ANGER', 'ANT', 'ANTE', 'ANTRE', 'ARE', 'ARGENT', 'ART', 'ATE', 'EAR', 'EAT', 'ENG', 'ERG', 'ERN', 'ETA', 'ETNA', 'GAE', 'GAEN', 'GAN', 'GANE', 'GAR', 'GAT', 'GATE', 'GEAR', 'GEN', 'GENT', 'GET', 'GETA', 'GNAR', 'GNAT', 'GRAN', 'GRAT', 'GRATE', 'GREAT', 'NAE', 'NAG', 'NEAR', 'NEAT', 'NET', 'RAG', 'RAGE', 'RAN', 'RANG', 'RANGE', 'RANT', 'RAT', 'RATE', 'REG', 'REGNA', 'RET', 'RETAG', 'TAE', 'TAG', 'TANG', 'TAR', 'TARE', 'TARGE', 'TARN', 'TEA', 'TEAR', 'TEG', 'TEN', 'TERGA', 'TERN'],
+      gridRows: 5,
+      gridCols: 6,
+      preRevealedCells: [(2, 0), (2, 2), (2, 4)],
+    ),
+    Level(
+      id: 34,
+      name: 'Lament',
+      letters: ['L', 'A', 'M', 'E', 'N', 'T'],
+      targetPlacements: [
+        WordPlacement(word: 'LAMENT', startRow: 0, startCol: 0, direction: WordDirection.horizontal, isBonus: true),
+        WordPlacement(word: 'LANE', startRow: 0, startCol: 0, direction: WordDirection.vertical),
+        WordPlacement(word: 'METAL', startRow: 0, startCol: 2, direction: WordDirection.vertical),
+        WordPlacement(word: 'NAME', startRow: 0, startCol: 4, direction: WordDirection.vertical),
+        WordPlacement(word: 'ATE', startRow: 3, startCol: 2, direction: WordDirection.horizontal),
+      ],
+      bonusWords: ['ALE', 'ALME', 'ALT', 'AMEN', 'AMENT', 'ANE', 'ANT', 'ANTE', 'EAT', 'ELAN', 'ELM', 'ETA', 'ETNA', 'LAM', 'LAME', 'LAT', 'LATE', 'LATEN', 'LEA', 'LEAN', 'LEANT', 'LEMAN', 'LENT', 'LET', 'MAE', 'MALE', 'MALT', 'MAN', 'MANE', 'MANTEL', 'MANTLE', 'MAT', 'MATE', 'MEAL', 'MEAN', 'MEANT', 'MEAT', 'MEL', 'MELT', 'MEN', 'MENTA', 'MENTAL', 'MET', 'META', 'NAE', 'NAM', 'NEAT', 'NEMA', 'NET', 'TAE', 'TAEL', 'TALE', 'TAM', 'TAME', 'TAN', 'TEA', 'TEAL', 'TEAM', 'TEL', 'TELA', 'TEN'],
+      gridRows: 5,
+      gridCols: 6,
+      preRevealedCells: [(2, 0), (2, 2), (2, 4)],
+    ),
+    Level(
+      id: 35,
+      name: 'Trance',
+      letters: ['T', 'R', 'A', 'N', 'C', 'E'],
+      targetPlacements: [
+        WordPlacement(word: 'TRANCE', startRow: 0, startCol: 0, direction: WordDirection.horizontal, isBonus: true),
+        WordPlacement(word: 'TRACE', startRow: 0, startCol: 0, direction: WordDirection.vertical),
+        WordPlacement(word: 'ACER', startRow: 0, startCol: 2, direction: WordDirection.vertical),
+        WordPlacement(word: 'CART', startRow: 0, startCol: 4, direction: WordDirection.vertical),
+        WordPlacement(word: 'EAR', startRow: 2, startCol: 2, direction: WordDirection.horizontal),
+        WordPlacement(word: 'RAT', startRow: 3, startCol: 2, direction: WordDirection.horizontal),
+      ],
+      bonusWords: ['ACE', 'ACNE', 'ACRE', 'ACT', 'ANE', 'ANT', 'ANTE', 'ANTRE', 'ARC', 'ARE', 'ART', 'ATE', 'CAN', 'CANE', 'CANER', 'CANT', 'CANTER', 'CAR', 'CARE', 'CARET', 'CARN', 'CARNET', 'CARTE', 'CAT', 'CATE', 'CATER', 'CENT', 'CENTRA', 'CRANE', 'CRATE', 'EARN', 'EAT', 'ENACT', 'ERA', 'ERN', 'ETA', 'ETNA', 'NACRE', 'NAE', 'NARC', 'NEAR', 'NEAT', 'NECTAR', 'NET', 'RACE', 'RAN', 'RANCE', 'RANT', 'RATE', 'REACT', 'REC', 'RECANT', 'RECTA', 'RENT', 'RET', 'TACE', 'TAE', 'TAN', 'TANREC', 'TAR', 'TARE', 'TARN', 'TEA', 'TEAR', 'TEN', 'TERN'],
+      gridRows: 5,
+      gridCols: 6,
+      preRevealedCells: [(2, 0), (2, 2), (2, 4)],
+    ),
+    Level(
+      id: 36,
+      name: 'Canter',
+      letters: ['C', 'A', 'N', 'T', 'E', 'R'],
+      targetPlacements: [
+        WordPlacement(word: 'CANTER', startRow: 0, startCol: 0, direction: WordDirection.horizontal, isBonus: true),
+        WordPlacement(word: 'CANT', startRow: 0, startCol: 0, direction: WordDirection.vertical),
+        WordPlacement(word: 'NEAR', startRow: 0, startCol: 2, direction: WordDirection.vertical),
+        WordPlacement(word: 'EARN', startRow: 0, startCol: 4, direction: WordDirection.vertical),
+        WordPlacement(word: 'ERA', startRow: 1, startCol: 2, direction: WordDirection.horizontal),
+        WordPlacement(word: 'RAN', startRow: 3, startCol: 2, direction: WordDirection.horizontal),
+      ],
+      bonusWords: ['ACE', 'ACNE', 'ACRE', 'ACT', 'ANE', 'ANT', 'ANTE', 'ANTRE', 'ARC', 'ARE', 'ART', 'ATE', 'CAN', 'CANE', 'CANER', 'CAR', 'CARE', 'CARET', 'CARN', 'CARNET', 'CART', 'CARTE', 'CAT', 'CATE', 'CATER', 'CENT', 'CENTRA', 'CRANE', 'CRATE', 'EAR', 'EAT', 'ENACT', 'ERN', 'ETA', 'ETNA', 'NACRE', 'NAE', 'NARC', 'NEAT', 'NECTAR', 'NET', 'RACE', 'RANCE', 'RANT', 'RAT', 'RATE', 'REACT', 'REC', 'RECANT', 'RECTA', 'RENT', 'RET', 'TACE', 'TAE', 'TAN', 'TANREC', 'TAR', 'TARE', 'TARN', 'TEA', 'TEAR', 'TEN', 'TERN', 'TRACE', 'TRANCE'],
+      gridRows: 5,
+      gridCols: 6,
+      preRevealedCells: [(2, 0), (2, 2), (2, 4)],
+    ),
+    Level(
+      id: 37,
+      name: 'Loaner',
+      letters: ['L', 'O', 'A', 'N', 'E', 'R'],
+      targetPlacements: [
+        WordPlacement(word: 'LOANER', startRow: 0, startCol: 0, direction: WordDirection.horizontal, isBonus: true),
+        WordPlacement(word: 'LEARN', startRow: 0, startCol: 0, direction: WordDirection.vertical),
+        WordPlacement(word: 'ALONE', startRow: 0, startCol: 2, direction: WordDirection.vertical),
+        WordPlacement(word: 'EARL', startRow: 0, startCol: 4, direction: WordDirection.vertical),
+      ],
+      bonusWords: ['AEON', 'AERO', 'ALE', 'ALOE', 'ANE', 'ANOLE', 'ARE', 'EAR', 'EARN', 'ELAN', 'ENOL', 'ENROL', 'EON', 'ERA', 'ERN', 'LANE', 'LAR', 'LEA', 'LEAN', 'LEAR', 'LENO', 'LOAN', 'LONE', 'LONER', 'LORAN', 'LORE', 'LORN', 'NAE', 'NEAR', 'NEROL', 'NOEL', 'NOR', 'OAR', 'OLE', 'OLEA', 'ONE', 'ORA', 'ORAL', 'ORE', 'ORLE', 'RALE', 'RAN', 'REAL', 'RELOAN', 'RENAL', 'ROAN', 'ROE', 'ROLE'],
+      gridRows: 5,
+      gridCols: 6,
+      preRevealedCells: [(2, 0), (2, 2), (2, 4)],
+    ),
+    Level(
+      id: 38,
+      name: 'Nestle',
+      letters: ['N', 'E', 'S', 'T', 'L', 'E'],
+      targetPlacements: [
+        WordPlacement(word: 'NESTLE', startRow: 0, startCol: 0, direction: WordDirection.horizontal, isBonus: true),
+        WordPlacement(word: 'NEST', startRow: 0, startCol: 0, direction: WordDirection.vertical),
+        WordPlacement(word: 'STEEL', startRow: 0, startCol: 2, direction: WordDirection.vertical),
+        WordPlacement(word: 'LENS', startRow: 0, startCol: 4, direction: WordDirection.vertical),
+        WordPlacement(word: 'TEE', startRow: 1, startCol: 2, direction: WordDirection.horizontal),
+      ],
+      bonusWords: ['EEL', 'EELS', 'ELS', 'ELSE', 'ENS', 'LEE', 'LEES', 'LEET', 'LEETS', 'LENES', 'LENSE', 'LENT', 'LEST', 'LET', 'LETS', 'NEE', 'NET', 'NETS', 'SEE', 'SEEL', 'SEEN', 'SEL', 'SEN', 'SENE', 'SENT', 'SENTE', 'SET', 'SLEET', 'STELE', 'TEEL', 'TEELS', 'TEEN', 'TEENS', 'TEES', 'TEL', 'TELE', 'TELES', 'TELS', 'TEN', 'TENS', 'TENSE'],
+      gridRows: 5,
+      gridCols: 6,
+      preRevealedCells: [(2, 0), (2, 2), (2, 4)],
+    ),
+    Level(
+      id: 39,
+      name: 'Coarse',
+      letters: ['C', 'O', 'A', 'R', 'S', 'E'],
+      targetPlacements: [
+        WordPlacement(word: 'COARSE', startRow: 0, startCol: 0, direction: WordDirection.horizontal, isBonus: true),
+        WordPlacement(word: 'CARE', startRow: 0, startCol: 0, direction: WordDirection.vertical),
+        WordPlacement(word: 'ACRES', startRow: 0, startCol: 2, direction: WordDirection.vertical),
+        WordPlacement(word: 'SCORE', startRow: 0, startCol: 4, direction: WordDirection.vertical),
+        WordPlacement(word: 'EAR', startRow: 3, startCol: 2, direction: WordDirection.horizontal),
+      ],
+      bonusWords: ['ACE', 'ACES', 'ACRE', 'AERO', 'ARC', 'ARCO', 'ARCS', 'ARE', 'ARES', 'AROSE', 'ARS', 'ARSE', 'CAR', 'CARES', 'CARS', 'CARSE', 'CASE', 'CERO', 'CEROS', 'COR', 'CORE', 'CORES', 'CORSE', 'COS', 'EARS', 'ERA', 'ERAS', 'EROS', 'ERS', 'ESCAR', 'OAR', 'OARS', 'OCA', 'OCAS', 'OCREA', 'OES', 'ORA', 'ORC', 'ORCA', 'ORCAS', 'ORCS', 'ORE', 'ORES', 'ORS', 'OSAR', 'OSE', 'RACE', 'RACES', 'RAS', 'RASE', 'REC', 'RECS', 'RES', 'ROC', 'ROCS', 'ROE', 'ROES', 'ROSE', 'SAC', 'SAE', 'SCAR', 'SCARE', 'SEA', 'SEAR', 'SEC', 'SER', 'SERA', 'SERAC', 'SOAR', 'SORA', 'SORE'],
+      gridRows: 5,
+      gridCols: 6,
+      preRevealedCells: [(2, 0), (2, 2), (2, 4)],
+    ),
+    Level(
+      id: 40,
+      name: 'Lander',
+      letters: ['L', 'A', 'N', 'D', 'E', 'R'],
+      targetPlacements: [
+        WordPlacement(word: 'LANDER', startRow: 0, startCol: 0, direction: WordDirection.horizontal, isBonus: true),
+        WordPlacement(word: 'LADEN', startRow: 0, startCol: 0, direction: WordDirection.vertical),
+        WordPlacement(word: 'NEAR', startRow: 0, startCol: 2, direction: WordDirection.vertical),
+        WordPlacement(word: 'EARN', startRow: 0, startCol: 4, direction: WordDirection.vertical),
+        WordPlacement(word: 'ERA', startRow: 1, startCol: 2, direction: WordDirection.horizontal),
+        WordPlacement(word: 'RAN', startRow: 3, startCol: 2, direction: WordDirection.horizontal),
+      ],
+      bonusWords: ['ALDER', 'ALE', 'AND', 'ANE', 'ARE', 'DAL', 'DALE', 'DARE', 'DARN', 'DARNEL', 'DEAL', 'DEAN', 'DEAR', 'DEL', 'DEN', 'EAR', 'EARL', 'ELAN', 'ELAND', 'ELD', 'END', 'ERN', 'LAD', 'LADE', 'LADER', 'LAND', 'LANE', 'LAR', 'LARD', 'LEA', 'LEAD', 'LEAN', 'LEAR', 'LEARN', 'LED', 'LEND', 'NAE', 'NALED', 'NARD', 'NERD', 'RAD', 'RALE', 'RAND', 'READ', 'REAL', 'RED', 'REDAN', 'RENAL', 'REND'],
+      gridRows: 5,
+      gridCols: 6,
+      preRevealedCells: [(2, 0), (2, 2), (2, 4)],
+    ),
+
     Level(
       id: 41,
       name: 'Spring',
       letters: ['S', 'P', 'R', 'I', 'N', 'G'],
       targetPlacements: [
-        WordPlacement(
-          word: 'SPRING',
-          startRow: 0,
-          startCol: 0,
-          direction: WordDirection.horizontal,
-          isBonus: true,
-        ),
-        WordPlacement(
-          word: 'SPRIG',
-          startRow: 0,
-          startCol: 0,
-          direction: WordDirection.vertical,
-        ),
-        WordPlacement(
-          word: 'PRIGS',
-          startRow: 0,
-          startCol: 1,
-          direction: WordDirection.vertical,
-        ),
-        WordPlacement(
-          word: 'RING',
-          startRow: 0,
-          startCol: 2,
-          direction: WordDirection.vertical,
-        ),
-        WordPlacement(
-          word: 'NIPS',
-          startRow: 0,
-          startCol: 4,
-          direction: WordDirection.vertical,
-        ),
-        WordPlacement(
-          word: 'GRINS',
-          startRow: 0,
-          startCol: 5,
-          direction: WordDirection.vertical,
-        ),
+        WordPlacement(word: 'SPRING', startRow: 0, startCol: 0, direction: WordDirection.horizontal, isBonus: true),
+        WordPlacement(word: 'PING', startRow: 0, startCol: 1, direction: WordDirection.vertical),
+        WordPlacement(word: 'GRIP', startRow: 3, startCol: 1, direction: WordDirection.horizontal),
+        WordPlacement(word: 'SING', startRow: 2, startCol: 3, direction: WordDirection.vertical),
+        WordPlacement(word: 'RINGS', startRow: 5, startCol: 0, direction: WordDirection.horizontal),
+        WordPlacement(word: 'SPIN', startRow: 5, startCol: 4, direction: WordDirection.vertical),
+        WordPlacement(word: 'PINS', startRow: 6, startCol: 4, direction: WordDirection.horizontal),
+        WordPlacement(word: 'SIGN', startRow: 8, startCol: 1, direction: WordDirection.horizontal),
       ],
-      bonusWords: ['GIN', 'GINS', 'GIP', 'GIPS', 'GIRN', 'GIRNS', 'GRIN', 'GRIP', 'GRIPS', 'INS', 'NIP', 'PIG', 'PIGS', 'PIN', 'PING', 'PINGS', 'PINS', 'PIRN', 'PIRNS', 'PIS', 'PRIG', 'PSI', 'RIG', 'RIGS', 'RIN', 'RINGS', 'RINS', 'RIP', 'RIPS', 'SIGN', 'SIN', 'SING', 'SIP', 'SIR', 'SNIP', 'SPIN', 'SRI'],
-      gridRows: 5,
-      gridCols: 6,
-      preRevealedCells: [(0, 3), (2, 5), (4, 1)],
+      bonusWords: ['GIN', 'GINS', 'GIP', 'GIPS', 'GIRN', 'GIRNS', 'GRIN', 'GRINS', 'GRIPS', 'INS', 'NIP', 'NIPS', 'PIG', 'PIGS', 'PIN', 'PINGS', 'PIRN', 'PIRNS', 'PIS', 'PRIG', 'PRIGS', 'PSI', 'RIG', 'RIGS', 'RIN', 'RING', 'RINS', 'RIP', 'RIPS', 'SIN', 'SIP', 'SIR', 'SNIP', 'SPRIG', 'SRI'],
+      gridRows: 9,
+      gridCols: 8,
+      preRevealedCells: [(2, 1), (3, 3), (4, 3), (5, 2), (7, 4), (6, 6), (8, 3)],
     ),
 
     // -------------------------------------------------------------------------
@@ -2836,54 +1687,20 @@ class LevelData {
       name: 'Planet',
       letters: ['P', 'L', 'A', 'N', 'E', 'T'],
       targetPlacements: [
-        WordPlacement(
-          word: 'PLANET',
-          startRow: 0,
-          startCol: 0,
-          direction: WordDirection.horizontal,
-          isBonus: true,
-        ),
-        WordPlacement(
-          word: 'PLANT',
-          startRow: 0,
-          startCol: 0,
-          direction: WordDirection.vertical,
-        ),
-        WordPlacement(
-          word: 'LANE',
-          startRow: 0,
-          startCol: 1,
-          direction: WordDirection.vertical,
-        ),
-        WordPlacement(
-          word: 'ANTE',
-          startRow: 0,
-          startCol: 2,
-          direction: WordDirection.vertical,
-        ),
-        WordPlacement(
-          word: 'NAPE',
-          startRow: 0,
-          startCol: 3,
-          direction: WordDirection.vertical,
-        ),
-        WordPlacement(
-          word: 'ELAN',
-          startRow: 0,
-          startCol: 4,
-          direction: WordDirection.vertical,
-        ),
-        WordPlacement(
-          word: 'TAPE',
-          startRow: 0,
-          startCol: 5,
-          direction: WordDirection.vertical,
-        ),
+        WordPlacement(word: 'PLANET', startRow: 0, startCol: 0, direction: WordDirection.horizontal, isBonus: true),
+        WordPlacement(word: 'PALE', startRow: 0, startCol: 0, direction: WordDirection.vertical),
+        WordPlacement(word: 'LANE', startRow: 2, startCol: 0, direction: WordDirection.horizontal),
+        WordPlacement(word: 'TALE', startRow: 0, startCol: 5, direction: WordDirection.vertical),
+        WordPlacement(word: 'LEAN', startRow: 3, startCol: 4, direction: WordDirection.horizontal),
+        WordPlacement(word: 'LATE', startRow: 3, startCol: 4, direction: WordDirection.vertical),
+        WordPlacement(word: 'TAPE', startRow: 6, startCol: 1, direction: WordDirection.horizontal),
+        WordPlacement(word: 'PLAN', startRow: 4, startCol: 2, direction: WordDirection.vertical),
+        WordPlacement(word: 'PANEL', startRow: 1, startCol: 7, direction: WordDirection.vertical),
       ],
-      bonusWords: ['ALE', 'ALP', 'ALT', 'ANE', 'ANT', 'APE', 'APT', 'ATE', 'EAT', 'ETA', 'ETNA', 'LAP', 'LAT', 'LATE', 'LATEN', 'LEA', 'LEAN', 'LEANT', 'LEAP', 'LEAPT', 'LENT', 'LEPT', 'LEPTA', 'LET', 'NAE', 'NAP', 'NEAP', 'NEAT', 'NET', 'PAL', 'PALE', 'PALET', 'PAN', 'PANE', 'PANEL', 'PANT', 'PAT', 'PATE', 'PATEN', 'PEA', 'PEAL', 'PEAN', 'PEAT', 'PELT', 'PEN', 'PENAL', 'PENT', 'PET', 'PETAL', 'PLAN', 'PLANE', 'PLAT', 'PLATE', 'PLATEN', 'PLEA', 'PLEAT', 'PLENA', 'TAE', 'TAEL', 'TALE', 'TAN', 'TAP', 'TEA', 'TEAL', 'TEL', 'TELA', 'TEN', 'TEPA', 'TEPAL'],
-      gridRows: 5,
-      gridCols: 6,
-      preRevealedCells: [(0, 2), (2, 4), (3, 1)],
+      bonusWords: ['ALE', 'ALP', 'ALT', 'ANE', 'ANT', 'ANTE', 'APE', 'APT', 'ATE', 'EAT', 'ELAN', 'ETA', 'ETNA', 'LAP', 'LAT', 'LATEN', 'LEA', 'LEANT', 'LEAP', 'LEAPT', 'LENT', 'LEPT', 'LEPTA', 'LET', 'NAE', 'NAP', 'NAPE', 'NEAP', 'NEAT', 'NET', 'PAL', 'PALET', 'PAN', 'PANE', 'PANT', 'PAT', 'PATE', 'PATEN', 'PEA', 'PEAL', 'PEAN', 'PEAT', 'PELT', 'PEN', 'PENAL', 'PENT', 'PET', 'PETAL', 'PLANE', 'PLANT', 'PLAT', 'PLATE', 'PLATEN', 'PLEA', 'PLEAT', 'PLENA', 'TAE', 'TAEL', 'TAN', 'TAP', 'TEA', 'TEAL', 'TEL', 'TELA', 'TEN', 'TEPA', 'TEPAL'],
+      gridRows: 8,
+      gridCols: 8,
+      preRevealedCells: [(2, 0), (2, 2), (2, 5), (3, 6), (5, 4), (6, 3), (6, 2), (3, 7)],
     ),
 
     // -------------------------------------------------------------------------
@@ -2909,54 +1726,20 @@ class LevelData {
       name: 'Simple',
       letters: ['S', 'I', 'M', 'P', 'L', 'E'],
       targetPlacements: [
-        WordPlacement(
-          word: 'SIMPLE',
-          startRow: 0,
-          startCol: 0,
-          direction: WordDirection.horizontal,
-          isBonus: true,
-        ),
-        WordPlacement(
-          word: 'SLIM',
-          startRow: 0,
-          startCol: 0,
-          direction: WordDirection.vertical,
-        ),
-        WordPlacement(
-          word: 'ISLE',
-          startRow: 0,
-          startCol: 1,
-          direction: WordDirection.vertical,
-        ),
-        WordPlacement(
-          word: 'MILE',
-          startRow: 0,
-          startCol: 2,
-          direction: WordDirection.vertical,
-        ),
-        WordPlacement(
-          word: 'PILE',
-          startRow: 0,
-          startCol: 3,
-          direction: WordDirection.vertical,
-        ),
-        WordPlacement(
-          word: 'LIMP',
-          startRow: 0,
-          startCol: 4,
-          direction: WordDirection.vertical,
-        ),
-        WordPlacement(
-          word: 'ELMS',
-          startRow: 0,
-          startCol: 5,
-          direction: WordDirection.vertical,
-        ),
+        WordPlacement(word: 'SIMPLE', startRow: 0, startCol: 0, direction: WordDirection.horizontal, isBonus: true),
+        WordPlacement(word: 'SLIP', startRow: 0, startCol: 0, direction: WordDirection.vertical),
+        WordPlacement(word: 'MILES', startRow: 0, startCol: 2, direction: WordDirection.vertical),
+        WordPlacement(word: 'SEMI', startRow: 4, startCol: 2, direction: WordDirection.horizontal),
+        WordPlacement(word: 'ISLE', startRow: 2, startCol: 0, direction: WordDirection.horizontal),
+        WordPlacement(word: 'SLIM', startRow: 2, startCol: 5, direction: WordDirection.vertical),
+        WordPlacement(word: 'LIES', startRow: 3, startCol: 5, direction: WordDirection.horizontal),
+        WordPlacement(word: 'LIME', startRow: 0, startCol: 7, direction: WordDirection.vertical),
+        WordPlacement(word: 'SMILE', startRow: 3, startCol: 8, direction: WordDirection.vertical),
       ],
-      bonusWords: ['ELM', 'ELS', 'EMS', 'IMP', 'IMPEL', 'IMPELS', 'IMPS', 'ISM', 'LEI', 'LEIS', 'LIE', 'LIES', 'LIME', 'LIMES', 'LIMPS', 'LIP', 'LIPS', 'LIS', 'LISP', 'MEL', 'MELS', 'MIL', 'MILES', 'MILS', 'MIS', 'MISE', 'PES', 'PIE', 'PIES', 'PILES', 'PIS', 'PLIE', 'PLIES', 'PSI', 'SEI', 'SEL', 'SEMI', 'SIM', 'SIMP', 'SIP', 'SIPE', 'SLIME', 'SLIP', 'SLIPE', 'SMILE', 'SPEIL', 'SPIEL', 'SPILE'],
-      gridRows: 4,
-      gridCols: 6,
-      preRevealedCells: [(0, 4), (2, 1), (3, 5)],
+      bonusWords: ['ELM', 'ELMS', 'ELS', 'EMS', 'IMP', 'IMPEL', 'IMPELS', 'IMPS', 'ISM', 'LEI', 'LEIS', 'LIE', 'LIMES', 'LIMP', 'LIMPS', 'LIP', 'LIPS', 'LIS', 'LISP', 'MEL', 'MELS', 'MIL', 'MILE', 'MILS', 'MIS', 'MISE', 'PES', 'PIE', 'PIES', 'PILE', 'PILES', 'PIS', 'PLIE', 'PLIES', 'PSI', 'SEI', 'SEL', 'SIM', 'SIMP', 'SIP', 'SIPE', 'SLIME', 'SLIPE', 'SPEIL', 'SPIEL', 'SPILE'],
+      gridRows: 8,
+      gridCols: 9,
+      preRevealedCells: [(2, 0), (2, 2), (4, 4), (2, 2), (4, 5), (3, 7), (2, 7), (5, 8)],
     ),
 
     // -------------------------------------------------------------------------
@@ -2983,54 +1766,20 @@ class LevelData {
       name: 'Travel',
       letters: ['T', 'R', 'A', 'V', 'E', 'L'],
       targetPlacements: [
-        WordPlacement(
-          word: 'TRAVEL',
-          startRow: 0,
-          startCol: 0,
-          direction: WordDirection.horizontal,
-          isBonus: true,
-        ),
-        WordPlacement(
-          word: 'TARE',
-          startRow: 0,
-          startCol: 0,
-          direction: WordDirection.vertical,
-        ),
-        WordPlacement(
-          word: 'RAVEL',
-          startRow: 0,
-          startCol: 1,
-          direction: WordDirection.vertical,
-        ),
-        WordPlacement(
-          word: 'ARTEL',
-          startRow: 0,
-          startCol: 2,
-          direction: WordDirection.vertical,
-        ),
-        WordPlacement(
-          word: 'VALE',
-          startRow: 0,
-          startCol: 3,
-          direction: WordDirection.vertical,
-        ),
-        WordPlacement(
-          word: 'EARL',
-          startRow: 0,
-          startCol: 4,
-          direction: WordDirection.vertical,
-        ),
-        WordPlacement(
-          word: 'LAVER',
-          startRow: 0,
-          startCol: 5,
-          direction: WordDirection.vertical,
-        ),
+        WordPlacement(word: 'TRAVEL', startRow: 0, startCol: 0, direction: WordDirection.horizontal, isBonus: true),
+        WordPlacement(word: 'EARL', startRow: 0, startCol: 4, direction: WordDirection.vertical),
+        WordPlacement(word: 'LATE', startRow: 3, startCol: 4, direction: WordDirection.horizontal),
+        WordPlacement(word: 'TEAR', startRow: 2, startCol: 1, direction: WordDirection.horizontal),
+        WordPlacement(word: 'ALERT', startRow: 0, startCol: 2, direction: WordDirection.vertical),
+        WordPlacement(word: 'ALTER', startRow: 3, startCol: 5, direction: WordDirection.vertical),
+        WordPlacement(word: 'RATE', startRow: 4, startCol: 0, direction: WordDirection.horizontal),
+        WordPlacement(word: 'REAL', startRow: 2, startCol: 7, direction: WordDirection.vertical),
+        WordPlacement(word: 'TALE', startRow: 6, startCol: 2, direction: WordDirection.horizontal),
       ],
-      bonusWords: ['ALE', 'ALERT', 'ALT', 'ALTER', 'ARE', 'ART', 'ATE', 'AVE', 'AVER', 'AVERT', 'EAR', 'EAT', 'ERA', 'ETA', 'LAR', 'LAT', 'LATE', 'LATER', 'LAV', 'LAVE', 'LEA', 'LEAR', 'LET', 'LEV', 'LEVA', 'RALE', 'RAT', 'RATE', 'RATEL', 'RAVE', 'REAL', 'RET', 'REV', 'TAE', 'TAEL', 'TALE', 'TALER', 'TAR', 'TAV', 'TEA', 'TEAL', 'TEAR', 'TEL', 'TELA', 'TRAVE', 'VALET', 'VAR', 'VARLET', 'VAT', 'VEAL', 'VELA', 'VELAR', 'VERA', 'VERT', 'VET'],
-      gridRows: 5,
-      gridCols: 6,
-      preRevealedCells: [(0, 1), (2, 3), (4, 2)],
+      bonusWords: ['ALE', 'ALT', 'ARE', 'ART', 'ARTEL', 'ATE', 'AVE', 'AVER', 'AVERT', 'EAR', 'EAT', 'ERA', 'ETA', 'LAR', 'LAT', 'LATER', 'LAV', 'LAVE', 'LAVER', 'LEA', 'LEAR', 'LET', 'LEV', 'LEVA', 'RALE', 'RAT', 'RATEL', 'RAVE', 'RAVEL', 'RET', 'REV', 'TAE', 'TAEL', 'TALER', 'TAR', 'TARE', 'TAV', 'TEA', 'TEAL', 'TEL', 'TELA', 'TRAVE', 'VALE', 'VALET', 'VAR', 'VARLET', 'VAT', 'VEAL', 'VELA', 'VELAR', 'VERA', 'VERT', 'VET'],
+      gridRows: 8,
+      gridCols: 8,
+      preRevealedCells: [(2, 4), (3, 6), (2, 3), (2, 2), (5, 5), (4, 2), (4, 7), (6, 4)],
     ),
 
     // -------------------------------------------------------------------------
@@ -3378,60 +2127,19 @@ class LevelData {
       name: 'Brights',
       letters: ['B', 'R', 'I', 'G', 'H', 'T', 'S'],
       targetPlacements: [
-        WordPlacement(
-          word: 'BRIGHTS',
-          startRow: 0,
-          startCol: 0,
-          direction: WordDirection.horizontal,
-          isBonus: true,
-        ),
-        WordPlacement(
-          word: 'BIRTH',
-          startRow: 0,
-          startCol: 0,
-          direction: WordDirection.vertical,
-        ),
-        WordPlacement(
-          word: 'RIBS',
-          startRow: 0,
-          startCol: 1,
-          direction: WordDirection.vertical,
-        ),
-        WordPlacement(
-          word: 'GRIST',
-          startRow: 0,
-          startCol: 3,
-          direction: WordDirection.vertical,
-        ),
-        WordPlacement(
-          word: 'HITS',
-          startRow: 0,
-          startCol: 4,
-          direction: WordDirection.vertical,
-        ),
-        WordPlacement(
-          word: 'TRIG',
-          startRow: 0,
-          startCol: 5,
-          direction: WordDirection.vertical,
-        ),
-        WordPlacement(
-          word: 'SHIRT',
-          startRow: 0,
-          startCol: 6,
-          direction: WordDirection.vertical,
-        ),
-        WordPlacement(
-          word: 'BRIT',
-          startRow: 2,
-          startCol: 1,
-          direction: WordDirection.horizontal,
-        ),
+        WordPlacement(word: 'BRIGHTS', startRow: 0, startCol: 0, direction: WordDirection.horizontal, isBonus: true),
+        WordPlacement(word: 'SHIRT', startRow: 0, startCol: 6, direction: WordDirection.vertical),
+        WordPlacement(word: 'BRIGHT', startRow: 4, startCol: 1, direction: WordDirection.horizontal),
+        WordPlacement(word: 'BIRTH', startRow: 3, startCol: 3, direction: WordDirection.vertical),
+        WordPlacement(word: 'RIGHTS', startRow: 7, startCol: 0, direction: WordDirection.horizontal),
+        WordPlacement(word: 'THIS', startRow: 2, startCol: 4, direction: WordDirection.horizontal),
+        WordPlacement(word: 'BITS', startRow: 0, startCol: 0, direction: WordDirection.vertical),
+        WordPlacement(word: 'HITS', startRow: 4, startCol: 5, direction: WordDirection.vertical),
       ],
-      bonusWords: ['BIG', 'BIGHT', 'BIGHTS', 'BIGS', 'BIRTHS', 'BIS', 'BIT', 'BITS', 'BRIG', 'BRIGHT', 'BRIGS', 'BRIS', 'BRITS', 'GHI', 'GHIS', 'GIB', 'GIBS', 'GIRSH', 'GIRT', 'GIRTH', 'GIRTHS', 'GIRTS', 'GIST', 'GIT', 'GITS', 'GRIT', 'GRITH', 'GRITHS', 'GRITS', 'HIS', 'HIST', 'HIT', 'ITS', 'RIB', 'RIG', 'RIGHT', 'RIGHTS', 'RIGS', 'SHIT', 'SHRI', 'SIB', 'SIGH', 'SIGHT', 'SIR', 'SIT', 'SITH', 'SRI', 'STIR', 'THIR', 'THIS', 'TIS', 'TRIGS'],
-      gridRows: 5,
-      gridCols: 7,
-      preRevealedCells: [(0, 2), (3, 6), (4, 3)],
+      bonusWords: ['BIG', 'BIGHT', 'BIGHTS', 'BIGS', 'BIRTHS', 'BIS', 'BIT', 'BRIG', 'BRIGS', 'BRIS', 'BRIT', 'BRITS', 'GHI', 'GHIS', 'GIB', 'GIBS', 'GIRSH', 'GIRT', 'GIRTH', 'GIRTHS', 'GIRTS', 'GIST', 'GIT', 'GITS', 'GRIST', 'GRIT', 'GRITH', 'GRITHS', 'GRITS', 'HIS', 'HIST', 'HIT', 'ITS', 'RIB', 'RIBS', 'RIG', 'RIGHT', 'RIGS', 'SHIT', 'SHRI', 'SIB', 'SIGH', 'SIGHT', 'SIR', 'SIT', 'SITH', 'SRI', 'STIR', 'THIR', 'TIS', 'TRIG', 'TRIGS'],
+      gridRows: 8,
+      gridCols: 8,
+      preRevealedCells: [(2, 6), (4, 4), (5, 3), (7, 3), (2, 6), (2, 0), (6, 5)],
     ),
 
     // -------------------------------------------------------------------------
@@ -3619,60 +2327,18 @@ class LevelData {
       name: 'Thrills',
       letters: ['T', 'H', 'R', 'I', 'L', 'L', 'S'],
       targetPlacements: [
-        WordPlacement(
-          word: 'THRILLS',
-          startRow: 0,
-          startCol: 0,
-          direction: WordDirection.horizontal,
-          isBonus: true,
-        ),
-        WordPlacement(
-          word: 'THRILL',
-          startRow: 0,
-          startCol: 0,
-          direction: WordDirection.vertical,
-        ),
-        WordPlacement(
-          word: 'HILLS',
-          startRow: 0,
-          startCol: 1,
-          direction: WordDirection.vertical,
-        ),
-        WordPlacement(
-          word: 'RILLS',
-          startRow: 0,
-          startCol: 2,
-          direction: WordDirection.vertical,
-        ),
-        WordPlacement(
-          word: 'ILLS',
-          startRow: 0,
-          startCol: 3,
-          direction: WordDirection.vertical,
-        ),
-        WordPlacement(
-          word: 'LIST',
-          startRow: 0,
-          startCol: 4,
-          direction: WordDirection.vertical,
-        ),
-        WordPlacement(
-          word: 'LILTS',
-          startRow: 0,
-          startCol: 5,
-          direction: WordDirection.vertical,
-        ),
-        WordPlacement(
-          word: 'SHIRT',
-          startRow: 0,
-          startCol: 6,
-          direction: WordDirection.vertical,
-        ),
+        WordPlacement(word: 'THRILLS', startRow: 0, startCol: 0, direction: WordDirection.horizontal, isBonus: true),
+        WordPlacement(word: 'STILL', startRow: 0, startCol: 6, direction: WordDirection.vertical),
+        WordPlacement(word: 'SHIRT', startRow: 2, startCol: 4, direction: WordDirection.horizontal),
+        WordPlacement(word: 'THIS', startRow: 0, startCol: 0, direction: WordDirection.vertical),
+        WordPlacement(word: 'HILLS', startRow: 4, startCol: 3, direction: WordDirection.horizontal),
+        WordPlacement(word: 'HITS', startRow: 4, startCol: 3, direction: WordDirection.vertical),
+        WordPlacement(word: 'LIST', startRow: 4, startCol: 5, direction: WordDirection.vertical),
       ],
-      bonusWords: ['HILL', 'HILT', 'HILTS', 'HIS', 'HIST', 'HIT', 'HITS', 'ILL', 'ITS', 'LILT', 'LIS', 'LIT', 'LITS', 'RILL', 'SHILL', 'SHIT', 'SHRI', 'SHRILL', 'SILL', 'SILT', 'SIR', 'SIT', 'SITH', 'SLIT', 'SRI', 'STILL', 'STIR', 'THILL', 'THILLS', 'THIR', 'THIRL', 'THIRLS', 'THIS', 'TIL', 'TILL', 'TILLS', 'TILS', 'TIRL', 'TIRLS', 'TIS', 'TRILL', 'TRILLS'],
-      gridRows: 6,
-      gridCols: 7,
-      preRevealedCells: [(0, 5), (3, 0), (4, 6)],
+      bonusWords: ['HILL', 'HILT', 'HILTS', 'HIS', 'HIST', 'HIT', 'ILL', 'ILLS', 'ITS', 'LILT', 'LILTS', 'LIS', 'LIT', 'LITS', 'RILL', 'RILLS', 'SHILL', 'SHIT', 'SHRI', 'SHRILL', 'SILL', 'SILT', 'SIR', 'SIT', 'SITH', 'SLIT', 'SRI', 'STIR', 'THILL', 'THILLS', 'THIR', 'THIRL', 'THIRLS', 'THRILL', 'TIL', 'TILL', 'TILLS', 'TILS', 'TIRL', 'TIRLS', 'TIS', 'TRILL', 'TRILLS'],
+      gridRows: 8,
+      gridCols: 9,
+      preRevealedCells: [(2, 6), (2, 6), (2, 0), (4, 5), (6, 3), (6, 5)],
     ),
   ];
 }

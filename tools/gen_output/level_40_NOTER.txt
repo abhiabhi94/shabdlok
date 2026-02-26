@@ -1,0 +1,18 @@
+
+    Level(
+      id: 40,
+      name: 'Noter',
+      letters: ['N', 'O', 'T', 'E', 'R'],
+      targetPlacements: [
+        WordPlacement(word: 'NOTER', startRow: 0, startCol: 0, direction: WordDirection.horizontal, isBonus: true),
+        WordPlacement(word: 'NOTRE', startRow: 0, startCol: 0, direction: WordDirection.vertical),
+        WordPlacement(word: 'TONER', startRow: 0, startCol: 2, direction: WordDirection.vertical),
+        WordPlacement(word: 'RENO', startRow: 0, startCol: 4, direction: WordDirection.vertical),
+        WordPlacement(word: 'ONE', startRow: 1, startCol: 2, direction: WordDirection.horizontal),
+      ],
+      bonusWords: ['EON', 'ERN', 'NET', 'NOR', 'NOT', 'NOTE', 'ORE', 'ORT', 'RENT', 'RET', 'ROE', 'ROT', 'ROTE', 'TEN', 'TENOR', 'TERN', 'TOE', 'TON', 'TONE', 'TOR', 'TORE', 'TORN', 'TRONE'],
+      gridRows: 5,
+      gridCols: 5,
+      preRevealedCells: [(2, 0), (2, 2), (2, 4)],
+    ),
+

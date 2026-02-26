@@ -1,0 +1,19 @@
+
+    Level(
+      id: 39,
+      name: 'Pares',
+      letters: ['P', 'A', 'R', 'E', 'S'],
+      targetPlacements: [
+        WordPlacement(word: 'PARES', startRow: 0, startCol: 0, direction: WordDirection.horizontal, isBonus: true),
+        WordPlacement(word: 'PEAS', startRow: 0, startCol: 0, direction: WordDirection.vertical),
+        WordPlacement(word: 'RAPE', startRow: 0, startCol: 2, direction: WordDirection.vertical),
+        WordPlacement(word: 'SPARE', startRow: 0, startCol: 4, direction: WordDirection.vertical),
+        WordPlacement(word: 'ASP', startRow: 1, startCol: 2, direction: WordDirection.horizontal),
+        WordPlacement(word: 'EAR', startRow: 3, startCol: 2, direction: WordDirection.horizontal),
+      ],
+      bonusWords: ['APE', 'APER', 'APERS', 'APES', 'APRES', 'APSE', 'ARE', 'ARES', 'ARS', 'ARSE', 'ASPER', 'EARS', 'ERA', 'ERAS', 'ERS', 'PAR', 'PARE', 'PARS', 'PARSE', 'PAS', 'PASE', 'PEA', 'PEAR', 'PEARS', 'PER', 'PES', 'PRASE', 'PRESA', 'RAP', 'RAPES', 'RAPS', 'RAS', 'RASE', 'RASP', 'REAP', 'REAPS', 'REP', 'REPS', 'RES', 'SAE', 'SAP', 'SEA', 'SEAR', 'SER', 'SERA', 'SPA', 'SPAE', 'SPAR', 'SPEAR'],
+      gridRows: 5,
+      gridCols: 5,
+      preRevealedCells: [(2, 0), (2, 2), (2, 4)],
+    ),
+

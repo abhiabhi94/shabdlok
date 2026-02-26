@@ -1,0 +1,19 @@
+
+    Level(
+      id: 34,
+      name: 'Pater',
+      letters: ['P', 'A', 'T', 'E', 'R'],
+      targetPlacements: [
+        WordPlacement(word: 'PATER', startRow: 0, startCol: 0, direction: WordDirection.horizontal, isBonus: true),
+        WordPlacement(word: 'PART', startRow: 0, startCol: 0, direction: WordDirection.vertical),
+        WordPlacement(word: 'TRAP', startRow: 0, startCol: 2, direction: WordDirection.vertical),
+        WordPlacement(word: 'RATE', startRow: 0, startCol: 4, direction: WordDirection.vertical),
+        WordPlacement(word: 'APT', startRow: 2, startCol: 2, direction: WordDirection.horizontal),
+        WordPlacement(word: 'PRE', startRow: 3, startCol: 2, direction: WordDirection.horizontal),
+      ],
+      bonusWords: ['APE', 'APER', 'APTER', 'ARE', 'ART', 'ATE', 'EAR', 'EAT', 'ERA', 'ETA', 'PAR', 'PARE', 'PAT', 'PATE', 'PEA', 'PEAR', 'PEART', 'PEAT', 'PER', 'PERT', 'PET', 'PRAT', 'PRATE', 'RAP', 'RAPE', 'RAPT', 'RAT', 'REAP', 'REP', 'RET', 'TAE', 'TAP', 'TAPE', 'TAPER', 'TAR', 'TARE', 'TARP', 'TEA', 'TEAR', 'TEPA'],
+      gridRows: 5,
+      gridCols: 5,
+      preRevealedCells: [(2, 0), (2, 2), (2, 4)],
+    ),
+
