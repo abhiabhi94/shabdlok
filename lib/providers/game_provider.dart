@@ -66,10 +66,9 @@ class GameNotifier extends StateNotifier<GameState> {
         phase: GamePhase.alreadyFound,
         lastFoundWord: word,
       );
-    } else if (state.level.targetPlacements.any((p) => !p.isBonus && p.word == word)) {
+    } else if (state.level.targetPlacements.any((p) => p.word == word)) {
       _handleTargetWord(word);
-    } else if (state.level.bonusWords.contains(word) ||
-        state.level.targetPlacements.any((p) => p.isBonus && p.word == word)) {
+    } else if (state.level.bonusWords.contains(word)) {
       _handleBonusWord(word);
     } else {
       state = state.copyWith(
@@ -106,7 +105,6 @@ class GameNotifier extends StateNotifier<GameState> {
   void _handleTargetWord(String word) {
     final newFound = {...state.progress.foundTargetWords, word};
     final requiredWords = state.level.targetPlacements
-        .where((p) => !p.isBonus)
         .map((p) => p.word)
         .toSet();
     final isComplete = newFound.containsAll(requiredWords);

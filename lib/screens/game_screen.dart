@@ -128,7 +128,7 @@ class _GameScreenState extends ConsumerState<GameScreen> {
     final screenSize = MediaQuery.of(context).size;
     final isInvalid = state.phase == GamePhase.invalidWord;
     final isAlreadyFound = state.phase == GamePhase.alreadyFound;
-    final totalWords = level.targetPlacements.where((p) => !p.isBonus).length;
+    final totalWords = level.targetPlacements.length;
     final foundCount = state.progress.foundTargetWords.length;
 
     return Scaffold(
